@@ -1,0 +1,163 @@
+.watchlist-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.watchlist-modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-primary);
+  width: 400px;
+  max-width: 90vw;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.watchlist-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-xl);
+  border-bottom: 1px solid var(--border-primary);
+  background: var(--bg-command);
+}
+
+.watchlist-modal__title {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.watchlist-modal__close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.watchlist-modal__close:hover {
+  color: var(--text-primary);
+}
+
+.watchlist-modal__search-container {
+  padding: var(--space-md) var(--space-xl);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.watchlist-modal__search {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  padding: var(--space-sm) var(--space-md);
+  outline: none;
+  box-sizing: border-box;
+}
+
+.watchlist-modal__search:focus {
+  border-color: var(--accent-orange);
+}
+
+.watchlist-modal__actions {
+  display: flex;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-xl);
+  border-bottom: 1px solid var(--border-primary);
+}
+
+.watchlist-modal__btn {
+  background: var(--bg-hover);
+  border: 1px solid var(--border-primary);
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.watchlist-modal__btn:hover {
+  background: var(--bg-active);
+  color: var(--text-primary);
+}
+
+.watchlist-modal__btn--primary {
+  background: var(--accent-orange-dim);
+  border-color: var(--accent-orange);
+  color: var(--accent-orange);
+  width: 100%;
+  padding: 8px;
+  font-size: var(--font-size-base);
+}
+
+.watchlist-modal__btn--primary:hover {
+  background: var(--accent-orange);
+  color: var(--bg-primary);
+}
+
+.watchlist-modal__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-md) var(--space-xl);
+}
+
+.watchlist-modal__list::-webkit-scrollbar {
+  width: 6px;
+}
+.watchlist-modal__list::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+}
+.watchlist-modal__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.watchlist-modal__row {
+  display: flex;
+  align-items: center;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.watchlist-modal__row:hover {
+  background: var(--bg-hover);
+}
+
+.watchlist-modal__checkbox {
+  margin-right: var(--space-md);
+  accent-color: var(--accent-orange);
+}
+
+.watchlist-modal__name {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+}
+
+.watchlist-modal__empty {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.watchlist-modal__footer {
+  padding: var(--space-md) var(--space-xl);
+  border-top: 1px solid var(--border-primary);
+  background: var(--bg-command);
+}

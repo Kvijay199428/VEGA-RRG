@@ -1,0 +1,48 @@
+{
+  "broker" : "UPSTOX",
+  "accounts" : {
+    "1" : {
+      "clientId" : "4871f658-a594-47b8-8176-d0d77578ef02",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI3RUFIQkoiLCJqdGkiOiI2YTFiYjk5MjliYzM4NDVkYmRhZjdjYzAiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzgwMjAxODc0LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3ODAyNjQ4MDB9.H19luV5Nn9UCGkBdDhZkOx1AZVL4TG2Z939HqXgrorA",
+      "userId" : "7EAHBJ",
+      "generatedTs" : "2026-05-31T04:31:11.245217200Z",
+      "validityTs" : "2026-05-31T22:00:00Z"
+    },
+    "2" : {
+      "clientId" : "9aff3af3-325f-41a2-85d9-30ea2fdf2106",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI3RUFIQkoiLCJqdGkiOiI2YTFiYjlhNjZlNzEyZjBlMWM2MmRjMTEiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzgwMjAxODk0LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3ODAyNjQ4MDB9.7cTzgwyXq95CtR-_l_cervw5vufi4iXhytXZs9Kupo4",
+      "userId" : "7EAHBJ",
+      "generatedTs" : "2026-05-31T04:31:30.893083800Z",
+      "validityTs" : "2026-05-31T22:00:00Z"
+    },
+    "3" : {
+      "clientId" : "17bb10d9-3f61-4cd8-8aa4-0b0ee82448f8",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI3RUFIQkoiLCJqdGkiOiI2YTFiYjljMDliYzM4NDVkYmRhZjdjYzQiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzgwMjAxOTIwLCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3ODAyNjQ4MDB9.6CcxPGztzKfOVAu5-roOPU_vK4_BHVFu7-v3QIIoyN4",
+      "userId" : "7EAHBJ",
+      "generatedTs" : "2026-05-31T04:31:56.503355100Z",
+      "validityTs" : "2026-05-31T22:00:00Z"
+    },
+    "4" : {
+      "clientId" : "747e91fb-6532-49c4-af80-2c8388be77e5",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI3RUFIQkoiLCJqdGkiOiI2YTFiYjljZjZlNzEyZjBlMWM2MmRjMTQiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzgwMjAxOTM1LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3ODAyNjQ4MDB9.5KLxVcSlr24t9q_wQyslD-2lWYf1hFJzAmqMOMXcU14",
+      "userId" : "7EAHBJ",
+      "generatedTs" : "2026-05-31T04:32:12.012403900Z",
+      "validityTs" : "2026-05-31T22:00:00Z"
+    },
+    "5" : {
+      "clientId" : "04362a8f-f775-4a9e-a18b-67308f0794fb",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI3RUFIQkoiLCJqdGkiOiI2YTFiYjlkYzZlNzEyZjBlMWM2MmRjMTUiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzgwMjAxOTQ4LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3ODAyNjQ4MDB9.qhvVVu5JLM03TRnUGbeY72pBQbaKDoFfDzmn2AKj_Nk",
+      "userId" : "7EAHBJ",
+      "generatedTs" : "2026-05-31T04:32:24.785779Z",
+      "validityTs" : "2026-05-31T22:00:00Z"
+    },
+    "6" : {
+      "clientId" : "096449e9-13fb-4089-982c-82748d231d1a",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJrZXlfaWQiOiJza192MS4wIiwiYWxnIjoiSFMyNTYifQ.eyJzdWIiOiI3RUFIQkoiLCJqdGkiOiI2YTFiYmM0NzliYzM4NDVkYmRhZjdjZDkiLCJpc011bHRpQ2xpZW50IjpmYWxzZSwiaXNQbHVzUGxhbiI6dHJ1ZSwiaWF0IjoxNzgwMjAyNTY3LCJpc3MiOiJ1ZGFwaS1nYXRld2F5LXNlcnZpY2UiLCJleHAiOjE3ODAyNjQ4MDB9.09bMG-_49sRGJXCrEVk6Ns23FRALTyQ4cf_Ju0HUxVY",
+      "userId" : "7EAHBJ",
+      "generatedTs" : "2026-05-31T04:42:47.582338300Z",
+      "validityTs" : "2026-05-31T22:00:00Z"
+    }
+  },
+  "generatedTs" : "2026-05-31T04:42:48.586268900Z"
+}

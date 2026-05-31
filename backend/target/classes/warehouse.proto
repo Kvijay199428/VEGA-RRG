@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package vega.rrg.proto;
+
+option java_multiple_files = true;
+option java_package = "com.vega.rrg.proto";
+option java_outer_classname = "WarehouseProto";
+
+message ProtoCandle {
+  int64 epoch_millis = 1;
+  double open = 2;
+  double high = 3;
+  double low = 4;
+  double close = 5;
+  double volume = 6;
+  double open_interest = 7;
+}
+
+message ProtoCandleFile {
+  string instrument_key = 1;
+  string timeframe = 2;
+  int64 updated_at_epoch_millis = 3;
+  repeated ProtoCandle candles = 4;
+}
+
+message ProtoResolvedSectorInstrument {
+  string sector = 1;
+  string company_name = 2;
+  string symbol = 3;
+  string isin = 4;
+  string instrument_key = 5;
+  string segment = 6;
+  string trading_symbol = 7;
+}
+
+message ProtoSectorMetadata {
+  string sector_name = 1;
+  string benchmark = 2;
+  string index_symbol = 3;
+  string index_instrument_key = 4;
+  string weightage_url = 5;
+  repeated ProtoResolvedSectorInstrument constituents = 6;
+}
+
+message ProtoSectorMetadataCollection {
+  int64 updated_at_epoch_millis = 1;
+  repeated ProtoSectorMetadata sectors = 2;
+}
+
+message ProtoInstrumentIndexEntry {
+  string lookup_key = 1;
+  string instrument_key = 2;
+  string segment = 3;
+  string instrument_type = 4;
+  string exchange = 5;
+  string name = 6;
+  string isin = 7;
+  string trading_symbol = 8;
+}
+
+message ProtoInstrumentIndexSnapshot {
+  int64 updated_at_epoch_millis = 1;
+  repeated ProtoInstrumentIndexEntry isin_entries = 2;
+  repeated ProtoInstrumentIndexEntry symbol_entries = 3;
+  repeated ProtoInstrumentIndexEntry trading_symbol_entries = 4;
+  repeated ProtoInstrumentIndexEntry index_symbol_entries = 5;
+}
+
+message ProtoInstrumentMapping {
+  string sector = 1;
+  string isin = 2;
+  string instrument_key = 3;
+  string trading_symbol = 4;
+  string segment = 5;
+}
+
+message ProtoInstrumentMappings {
+  int64 updated_at_epoch_millis = 1;
+  repeated ProtoInstrumentMapping mappings = 2;
+}

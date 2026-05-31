@@ -1,0 +1,155 @@
+.command-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  height: var(--command-bar-height, 42px);
+  background-color: var(--bg-command, #1e1e1e);
+  border-bottom: 1px solid var(--border-primary, #333);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--text-primary, #eee);
+  box-sizing: border-box;
+}
+
+.command-bar__benchmark {
+  background-color: var(--bg-input, #000);
+  color: var(--text-primary, #eee);
+  border: 1px solid var(--border-secondary, #444);
+  padding: 2px 8px;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border-radius: var(--radius-none, 0);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.command-bar__benchmark:focus {
+  border-color: var(--accent-orange, #ff6b00);
+}
+
+.command-bar__group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-secondary, #444);
+}
+
+.command-bar__segment-btn {
+  background-color: var(--bg-panel, #2a2a2a);
+  color: var(--text-secondary, #aaa);
+  border: none;
+  border-right: 1px solid var(--border-secondary, #444);
+  padding: 4px 10px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+  border-radius: var(--radius-none, 0);
+  border-bottom: 2px solid transparent;
+}
+
+.command-bar__segment-btn:last-child {
+  border-right: none;
+}
+
+.command-bar__segment-btn:hover {
+  background-color: var(--bg-hover, #333);
+  color: var(--text-primary, #eee);
+}
+
+.command-bar__segment-btn--active {
+  color: var(--text-primary, #eee);
+  border-bottom: 2px solid var(--accent-orange, #ff6b00);
+  background-color: var(--bg-active, #222);
+}
+
+.command-bar__toggle {
+  background: none;
+  border: none;
+  color: var(--text-secondary, #aaa);
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-none, 0);
+}
+
+.command-bar__toggle:hover {
+  color: var(--text-primary, #eee);
+}
+
+.command-bar__toggle--active {
+  color: var(--accent-orange, #ff6b00);
+}
+
+.command-bar__playback {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 8px;
+}
+
+.command-bar__playback-btn {
+  background: none;
+  border: 1px solid var(--border-secondary, #444);
+  color: var(--text-primary, #eee);
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-none, 0);
+}
+
+.command-bar__playback-btn:hover {
+  border-color: var(--accent-orange, #ff6b00);
+  color: var(--accent-orange, #ff6b00);
+}
+
+.command-bar__export-btn {
+  background-color: transparent;
+  color: var(--text-secondary, #aaa);
+  border: 1px solid var(--border-secondary, #444);
+  padding: 2px 12px;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  margin-left: 8px;
+  border-radius: var(--radius-none, 0);
+}
+
+.command-bar__export-btn:hover {
+  color: var(--text-primary, #eee);
+  border-color: var(--text-secondary, #aaa);
+}
+
+.command-bar__spacer {
+  flex: 1;
+}
+
+.command-bar__clock {
+  color: var(--text-muted, #777);
+  font-size: var(--font-size-xs, 10px);
+}
+
+.command-bar__settings-btn {
+  background: none;
+  border: 1px solid #2a2a2a;
+  color: #FF9900;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  padding: 4px 10px;
+  cursor: pointer;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.command-bar__settings-btn:hover {
+  background: rgba(255,153,0,0.1);
+  border-color: #FF9900;
+}

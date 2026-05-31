@@ -1,0 +1,44 @@
+.app {
+  display: grid;
+  grid-template-rows: var(--command-bar-height) 1fr var(--status-bar-height);
+  grid-template-columns: 320px 1fr 260px;
+  grid-template-areas:
+    "command command command"
+    "left    chart   watchlist"
+    "status  status  status";
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+.app__command { grid-area: command; }
+.app__left {
+  grid-area: left;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-primary);
+  overflow: hidden;
+}
+.app__watchlist {
+  grid-area: watchlist;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid var(--border-primary);
+  overflow: hidden;
+}
+.app__chart { grid-area: chart; overflow: hidden; position: relative; }
+.app__status { grid-area: status; }
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "command"
+      "chart"
+      "status";
+  }
+  .app__left, .app__watchlist {
+    display: none;
+  }
+}

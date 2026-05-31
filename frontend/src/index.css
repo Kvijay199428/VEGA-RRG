@@ -1,0 +1,121 @@
+:root {
+  /* Background hierarchy */
+  --bg-primary: #000000;
+  --bg-secondary: #050505;
+  --bg-panel: #0B0B0B;
+  --bg-command: #111111;
+  --bg-input: #0A0A0A;
+  --bg-hover: #1A1A1A;
+  --bg-active: #222222;
+  
+  /* Borders */
+  --border-primary: #1F1F1F;
+  --border-secondary: #2A2A2A;
+  --border-grid: #1E1E1E;
+  --border-grid-major: #2A2A2A;
+  --border-active: var(--accent-orange);
+  
+  /* Text */
+  --text-primary: #E0E0E0;
+  --text-secondary: #909090;
+  --text-muted: #606060;
+  --text-label: #707070;
+  
+  /* Accent */
+  --accent-orange: #FF9900;
+  --accent-orange-dim: rgba(255, 153, 0, 0.3);
+  
+  /* Quadrant colors - semantic */
+  --quadrant-leading: #0D5C2A;
+  --quadrant-weakening: #8A7A00;
+  --quadrant-lagging: #5A120F;
+  --quadrant-improving: #0B3D5A;
+  --quadrant-leading-text: #2ECC71;
+  --quadrant-weakening-text: #F1C40F;
+  --quadrant-lagging-text: #E74C3C;
+  --quadrant-improving-text: #3498DB;
+  
+  /* Axis */
+  --axis-center: #707070;
+  
+  /* Spacing */
+  --space-xs: 2px;
+  --space-sm: 4px;
+  --space-md: 8px;
+  --space-lg: 12px;
+  --space-xl: 16px;
+  --space-2xl: 24px;
+  
+  /* Typography */
+  --font-mono: 'IBM Plex Mono', 'JetBrains Mono', 'Roboto Mono', monospace;
+  --font-size-xs: 9px;
+  --font-size-sm: 10px;
+  --font-size-base: 11px;
+  --font-size-md: 12px;
+  --font-size-lg: 14px;
+  --font-size-xl: 16px;
+  
+  /* Layout */
+  --command-bar-height: 42px;
+  --status-bar-height: 24px;
+  --watchlist-width: 260px;
+  
+  /* Radius */
+  --radius-none: 0px;
+  --radius-sm: 2px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: var(--radius-sm);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Selection colors */
+::selection {
+  background: var(--accent-orange-dim);
+  color: var(--text-primary);
+}
+
+/* Input/select/button resets */
+input, select, button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+/* Utility classes */
+.text-leading { color: var(--quadrant-leading-text); }
+.text-weakening { color: var(--quadrant-weakening-text); }
+.text-lagging { color: var(--quadrant-lagging-text); }
+.text-improving { color: var(--quadrant-improving-text); }
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

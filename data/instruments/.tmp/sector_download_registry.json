@@ -1,0 +1,837 @@
+{
+  "entries" : [ {
+    "sector" : "NSE_INDEX|BHARATBOND-APR31",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957267.025816400,
+    "retryAfter" : 1778959067.025816400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|BHARATBOND-APR30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957267.026404700,
+    "retryAfter" : 1778959067.026404700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|BHARATBOND-APR32",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957267.657764000,
+    "retryAfter" : 1778959067.657764000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|BHARATBOND-APR33",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957267.657764000,
+    "retryAfter" : 1778959067.657764000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY Alpha 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957268.275828500,
+    "retryAfter" : 1778959068.275828500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY AlphaLowVol",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957268.877852700,
+    "retryAfter" : 1778959068.877852700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY CONSR DURBL",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957268.872768800,
+    "retryAfter" : 1778959068.872768800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|India VIX",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957268.267130100,
+    "retryAfter" : 1778959068.267130100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY HEALTHCARE",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957269.474308300,
+    "retryAfter" : 1778959069.474308300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY IND DIGITAL",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957269.477451000,
+    "retryAfter" : 1778959069.477451000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY INDIA MFG",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957270.084656000,
+    "retryAfter" : 1778959070.084656000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY LARGEMID250",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957270.121899200,
+    "retryAfter" : 1778959070.121899200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY M150 QLTY50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957270.759752700,
+    "retryAfter" : 1778959070.759752700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY MICROCAP250",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957270.768808400,
+    "retryAfter" : 1778959070.768808400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY MIDCAP 100",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957271.359995100,
+    "retryAfter" : 1778959071.359995100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY MIDCAP 150",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957271.359995100,
+    "retryAfter" : 1778959071.359995100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY MIDSML 400",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957272.115227300,
+    "retryAfter" : 1778959072.115227300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY OIL AND GAS",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957272.160160200,
+    "retryAfter" : 1778959072.160160200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY SMLCAP 100",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957272.770228800,
+    "retryAfter" : 1778959072.770228800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY SMLCAP 250",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957272.803674400,
+    "retryAfter" : 1778959072.803674400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY SMLCAP 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957273.392513800,
+    "retryAfter" : 1778959073.392513800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY TOTAL MKT",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957273.409776400,
+    "retryAfter" : 1778959073.409776400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY100 EQL Wgt",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957273.986970100,
+    "retryAfter" : 1778959073.986970100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY100 ESG",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957274.024440800,
+    "retryAfter" : 1778959074.024440800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY100 LowVol30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957274.622309800,
+    "retryAfter" : 1778959074.622309800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY100 Qualty30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957274.622309800,
+    "retryAfter" : 1778959074.622309800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY200 QUALTY30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957275.222888300,
+    "retryAfter" : 1778959075.222888300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY50 EQL Wgt",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957275.221883200,
+    "retryAfter" : 1778959075.221883200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty 100",
+    "lastSuccessfulDownload" : 1778951058.867060100,
+    "lastAttempt" : 1778951058.867060100,
+    "retryAfter" : null,
+    "status" : "SUCCESS"
+  }, {
+    "sector" : "NSE_INDEX|NIFTY500 MULTICAP",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957275.825667500,
+    "retryAfter" : 1778959075.825667500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty 50",
+    "lastSuccessfulDownload" : 1778951059.381300000,
+    "lastAttempt" : 1778951059.381300000,
+    "retryAfter" : null,
+    "status" : "SUCCESS"
+  }, {
+    "sector" : "NSE_INDEX|Nifty 200",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957275.844389200,
+    "retryAfter" : 1778959075.844389200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty 500",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957276.424122900,
+    "retryAfter" : 1778959076.424122900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty AQL 30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957276.463666700,
+    "retryAfter" : 1778959076.463666700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty AQLV 30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957277.035272200,
+    "retryAfter" : 1778959077.035272200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Auto",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957277.074160200,
+    "retryAfter" : 1778959077.074160200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Bank",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957277.641806700,
+    "retryAfter" : 1778959077.641806700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty CPSE",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957277.691492500,
+    "retryAfter" : 1778959077.691492500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Capital Mkt",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957278.237772500,
+    "retryAfter" : 1778959078.237772500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Cement",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957278.344033300,
+    "retryAfter" : 1778959078.344033300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Chemicals",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957278.841540600,
+    "retryAfter" : 1778959078.841540600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Consumption",
+    "lastSuccessfulDownload" : 1778951062.455309800,
+    "lastAttempt" : 1778951062.455309800,
+    "retryAfter" : null,
+    "status" : "SUCCESS"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Commodities",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957278.955157300,
+    "retryAfter" : 1778959078.955157300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty CoreHousing",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957279.442826000,
+    "retryAfter" : 1778959079.442826000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Corp MAATR",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957279.557678600,
+    "retryAfter" : 1778959079.557678600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Div Opps 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957280.054820500,
+    "retryAfter" : 1778959080.054820500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty EV",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957280.167019800,
+    "retryAfter" : 1778959080.167019800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Energy",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957280.666584400,
+    "retryAfter" : 1778959080.666584400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty FMCG",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957280.787168800,
+    "retryAfter" : 1778959080.787168800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty FPI 150",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957281.273536900,
+    "retryAfter" : 1778959081.273536900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Fin Service",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957281.391098300,
+    "retryAfter" : 1778959081.391098300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty FinSerExBnk",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957281.875711300,
+    "retryAfter" : 1778959081.875711300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty FinSrv25 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957281.989339600,
+    "retryAfter" : 1778959081.989339600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS 10Yr",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957282.503301800,
+    "retryAfter" : 1778959082.503301800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS 10Yr Cln",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957282.618773200,
+    "retryAfter" : 1778959082.618773200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS 11 15Yr",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957283.119724100,
+    "retryAfter" : 1778959083.119724100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS 15YrPlus",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957283.223378100,
+    "retryAfter" : 1778959083.223378100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS 8 13Yr",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957283.847835000,
+    "retryAfter" : 1778959083.847835000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS 4 8Yr",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957283.727955600,
+    "retryAfter" : 1778959083.727955600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GS Compsite",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957284.339821100,
+    "retryAfter" : 1778959084.339821100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty GrowSect 15",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957284.459341200,
+    "retryAfter" : 1778959084.459341200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty HighBeta 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957284.932098400,
+    "retryAfter" : 1778959084.932098400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Housing",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957285.056830100,
+    "retryAfter" : 1778959085.056830100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty IT",
+    "lastSuccessfulDownload" : 1778951068.650411000,
+    "lastAttempt" : 1778951068.650411000,
+    "retryAfter" : null,
+    "status" : "SUCCESS"
+  }, {
+    "sector" : "NSE_INDEX|Nifty IPO",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957285.542853800,
+    "retryAfter" : 1778959085.542853800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Ind Defence",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957285.656346500,
+    "retryAfter" : 1778959085.656346500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Ind Tourism",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957286.137941600,
+    "retryAfter" : 1778959086.137941600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Infra",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957286.255571200,
+    "retryAfter" : 1778959086.255571200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty InfraLog",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957286.740874200,
+    "retryAfter" : 1778959086.740874200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Internet",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957286.850731000,
+    "retryAfter" : 1778959086.850731000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Low Vol 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957287.334636400,
+    "retryAfter" : 1778959087.334636400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MID SELECT",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957287.457820600,
+    "retryAfter" : 1778959087.457820600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MNC",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957287.937374000,
+    "retryAfter" : 1778959087.937374000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MS Fin Serv",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957288.067402100,
+    "retryAfter" : 1778959088.067402100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MS IT Telcm",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957288.552324500,
+    "retryAfter" : 1778959088.552324500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MS Ind Cons",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957288.711758300,
+    "retryAfter" : 1778959088.711758300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Metal",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957289.324582100,
+    "retryAfter" : 1778959089.324582100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Media",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957289.153457800,
+    "retryAfter" : 1778959089.153457800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Mid Liq 15",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957289.754857600,
+    "retryAfter" : 1778959089.754857600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MidSmall",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957289.915701100,
+    "retryAfter" : 1778959089.915701100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty MidSml Hlth",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957290.354775200,
+    "retryAfter" : 1778959090.354775200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Midcap 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957290.537575900,
+    "retryAfter" : 1778959090.537575900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Mobility",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957290.954765100,
+    "retryAfter" : 1778959090.954765100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Multi Infra",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957291.141615800,
+    "retryAfter" : 1778959091.141615800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Multi MQ 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957291.555252000,
+    "retryAfter" : 1778959091.555252000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Multi Mfg",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957291.737662400,
+    "retryAfter" : 1778959091.737662400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Next 50",
+    "lastSuccessfulDownload" : 1778951075.581250700,
+    "lastAttempt" : 1778951075.581250700,
+    "retryAfter" : null,
+    "status" : "SUCCESS"
+  }, {
+    "sector" : "NSE_INDEX|Nifty New Consump",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957292.154746500,
+    "retryAfter" : 1778959092.154746500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty NonCyc Cons",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957292.352730900,
+    "retryAfter" : 1778959092.352730900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty PSE",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957292.774893300,
+    "retryAfter" : 1778959092.774893300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty PSU Bank",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957292.954812100,
+    "retryAfter" : 1778959092.954812100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Pharma",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957293.415775200,
+    "retryAfter" : 1778959093.415775200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Pvt Bank",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957293.557958700,
+    "retryAfter" : 1778959093.557958700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Qlty LV 30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957294.024527100,
+    "retryAfter" : 1778959094.024527100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty REITs Realty",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957294.182520500,
+    "retryAfter" : 1778959094.182520500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Realty",
+    "lastSuccessfulDownload" : 1778951078.002952300,
+    "lastAttempt" : 1778951078.002952300,
+    "retryAfter" : null,
+    "status" : "SUCCESS"
+  }, {
+    "sector" : "NSE_INDEX|Nifty RailwaysPSU",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957294.636403000,
+    "retryAfter" : 1778959094.636403000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Rural",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957294.790360400,
+    "retryAfter" : 1778959094.790360400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty SME Emerge",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957295.241896600,
+    "retryAfter" : 1778959095.241896600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Serv Sector",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957295.408075400,
+    "retryAfter" : 1778959095.408075400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Shariah 25",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957295.853678700,
+    "retryAfter" : 1778959095.853678700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Smallcap 500",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957296.019183700,
+    "retryAfter" : 1778959096.019183700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Sml250 Q50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957296.467211400,
+    "retryAfter" : 1778959096.467211400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty TMMQ 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957296.655145100,
+    "retryAfter" : 1778959096.655145100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Tata 25 Cap",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957297.133171900,
+    "retryAfter" : 1778959097.133171900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Top 10 EW",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957297.255793500,
+    "retryAfter" : 1778959097.255793500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Top 15 EW",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957297.740460000,
+    "retryAfter" : 1778959097.740460000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Top 20 EW",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957297.851730900,
+    "retryAfter" : 1778959097.851730900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Trans Logis",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957298.340196600,
+    "retryAfter" : 1778959098.340196600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty Waves",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957298.455344900,
+    "retryAfter" : 1778959098.455344900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty100 Alpha 30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957298.937358200,
+    "retryAfter" : 1778959098.937358200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty100 Enh ESG",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957299.059683400,
+    "retryAfter" : 1778959099.059683400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty100 Liq 15",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957299.540120400,
+    "retryAfter" : 1778959099.540120400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty100ESGSecLdr",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957299.658480900,
+    "retryAfter" : 1778959099.658480900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty200 Alpha 30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957300.158609600,
+    "retryAfter" : 1778959100.158609600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty200 Value 30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957300.256049700,
+    "retryAfter" : 1778959100.256049700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty200Momentm30",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957300.757889600,
+    "retryAfter" : 1778959100.757889600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 Div Point",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957300.858272400,
+    "retryAfter" : 1778959100.858272400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 PR 1x Inv",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957301.357867900,
+    "retryAfter" : 1778959101.357867900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 PR 2x Lev",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957301.457884900,
+    "retryAfter" : 1778959101.457884900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 Shariah",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957301.960698900,
+    "retryAfter" : 1778959101.960698900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 TR 1x Inv",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957302.140354200,
+    "retryAfter" : 1778959102.140354200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 TR 2x Lev",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957302.574747000,
+    "retryAfter" : 1778959102.574747000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 USD",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957302.742832700,
+    "retryAfter" : 1778959102.742832700,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty50 Value 20",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957303.167240600,
+    "retryAfter" : 1778959103.167240600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 EW",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957303.353023400,
+    "retryAfter" : 1778959103.353023400,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 Flexicap",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957303.788341300,
+    "retryAfter" : 1778959103.788341300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 Health",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957303.949865200,
+    "retryAfter" : 1778959103.949865200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 LMS Eql",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957304.408224800,
+    "retryAfter" : 1778959104.408224800,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 LowVol50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957304.556521500,
+    "retryAfter" : 1778959104.556521500,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 MQVLv50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957305.002755100,
+    "retryAfter" : 1778959105.002755100,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 Qlty50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957305.210357600,
+    "retryAfter" : 1778959105.210357600,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 Shariah",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957305.605271300,
+    "retryAfter" : 1778959105.605271300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500 Value 50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957305.805533000,
+    "retryAfter" : 1778959105.805533000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|Nifty500Momentm50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957306.205301200,
+    "retryAfter" : 1778959106.205301200,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NiftyConglomerate",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957306.399286900,
+    "retryAfter" : 1778959106.399286900,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NiftyM150Momntm50",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957306.805413000,
+    "retryAfter" : 1778959106.805413000,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NiftyMS400 MQ 100",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957307.001820300,
+    "retryAfter" : 1778959107.001820300,
+    "status" : "FAILED"
+  }, {
+    "sector" : "NSE_INDEX|NiftySml250MQ 100",
+    "lastSuccessfulDownload" : null,
+    "lastAttempt" : 1778957307.402954200,
+    "retryAfter" : 1778959107.402954200,
+    "status" : "FAILED"
+  } ]
+}

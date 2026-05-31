@@ -1,0 +1,157 @@
+{
+  "communities": {
+    "0": [
+      "components_rrggraph_rrggraph",
+      "components_rrggraph_rrggraphprops",
+      "components_sidebar_sidebar",
+      "components_sidebar_sidebarprops",
+      "frontend_src_app_tsx",
+      "frontend_src_components_rrggraph_tsx",
+      "frontend_src_components_sidebar_tsx",
+      "frontend_src_main_tsx",
+      "frontend_src_types_ts",
+      "src_app_app",
+      "src_types_rrgpoint",
+      "src_types_trailpoint"
+    ],
+    "1": [
+      "data_py",
+      "vega_rrg_data_build_proto_file",
+      "vega_rrg_data_fetch_candle_chunk",
+      "vega_rrg_data_fetch_full_history",
+      "vega_rrg_data_load_access_token",
+      "vega_rrg_data_load_index_instruments",
+      "vega_rrg_data_main",
+      "vega_rrg_data_sanitize_filename",
+      "vega_rrg_data_save_proto_file",
+      "vega_rrg_data_split_date_ranges"
+    ],
+    "2": [
+      "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "service_candleservice_candleservice",
+      "service_candleservice_candleservice_loadcandles",
+      "service_rrgservice_rrgservice",
+      "service_rrgservice_rrgservice_calculateforsector",
+      "service_rrgservice_rrgservice_calculatenormalizedseries",
+      "service_rrgservice_rrgservice_calculaterrg",
+      "service_rrgservice_rrgservice_getquadrant"
+    ],
+    "3": [
+      "script_copier_py",
+      "vega_rrg_script_copier_build_markdown",
+      "vega_rrg_script_copier_collect_files",
+      "vega_rrg_script_copier_lang_tag",
+      "vega_rrg_script_copier_main",
+      "vega_rrg_script_copier_rationale_1",
+      "vega_rrg_script_copier_rationale_74",
+      "vega_rrg_script_copier_rationale_94",
+      "vega_rrg_script_copier_rationale_99"
+    ],
+    "4": [
+      "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "controller_rrgcontroller_rrgcontroller",
+      "controller_rrgcontroller_rrgcontroller_getsectors",
+      "controller_rrgcontroller_rrgcontroller_getsnapshot"
+    ],
+    "5": [
+      "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "model_rrgpoint_rrgpoint",
+      "model_rrgpoint_trailpoint"
+    ],
+    "6": [
+      "backend_src_main_java_com_vega_rrg_rrgapplication_java",
+      "rrg_rrgapplication_rrgapplication",
+      "rrg_rrgapplication_rrgapplication_main"
+    ],
+    "7": [
+      "warehouse_pb2_py"
+    ],
+    "8": [
+      "frontend_eslint_config_js"
+    ],
+    "9": [
+      "frontend_postcss_config_js"
+    ],
+    "10": [
+      "frontend_tailwind_config_js"
+    ],
+    "11": [
+      "frontend_vite_config_ts"
+    ]
+  },
+  "cohesion": {
+    "0": 0.21,
+    "1": 0.38,
+    "2": 0.33,
+    "3": 0.31,
+    "4": 0.5,
+    "5": 0.67,
+    "6": 0.67,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0
+  },
+  "gods": [
+    {
+      "id": "vega_rrg_data_main",
+      "label": "main()",
+      "degree": 6
+    },
+    {
+      "id": "service_rrgservice_rrgservice",
+      "label": "RrgService",
+      "degree": 5
+    },
+    {
+      "id": "vega_rrg_data_fetch_full_history",
+      "label": "fetch_full_history()",
+      "degree": 4
+    },
+    {
+      "id": "vega_rrg_script_copier_build_markdown",
+      "label": "build_markdown()",
+      "degree": 4
+    },
+    {
+      "id": "vega_rrg_data_save_proto_file",
+      "label": "save_proto_file()",
+      "degree": 3
+    },
+    {
+      "id": "vega_rrg_script_copier_collect_files",
+      "label": "collect_files()",
+      "degree": 3
+    },
+    {
+      "id": "vega_rrg_script_copier_lang_tag",
+      "label": "lang_tag()",
+      "degree": 3
+    },
+    {
+      "id": "vega_rrg_script_copier_main",
+      "label": "main()",
+      "degree": 3
+    },
+    {
+      "id": "controller_rrgcontroller_rrgcontroller",
+      "label": "RrgController",
+      "degree": 3
+    },
+    {
+      "id": "src_types_rrgpoint",
+      "label": "RrgPoint",
+      "degree": 3
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `r\"\"\" script-copier.py Recursively scans d:\\VEGA\\VEGA_AUTH\\backend\\src\\main\\jav`, `Recursively collect all script/source files, sorted by path.`, `Return the markdown language tag for a file extension.` to the rest of the system?",
+      "why": "9 weakly-connected nodes found - possible documentation gaps or missing edges."
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+.watchlist {
+  display: flex;
+  flex-direction: column;
+  width: var(--watchlist-width, 240px);
+  height: 100%;
+  background-color: var(--bg-panel, #121212);
+  border-right: 1px solid var(--border-primary, #333);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--text-primary, #eee);
+  box-sizing: border-box;
+}
+
+.watchlist__search-container {
+  padding: 8px;
+}
+
+.watchlist__search {
+  width: 100%;
+  background-color: var(--bg-input, #000);
+  border: 1px solid var(--border-secondary, #444);
+  color: var(--text-primary, #eee);
+  padding: 4px 8px;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  box-sizing: border-box;
+  border-radius: var(--radius-none, 0);
+}
+
+.watchlist__search:focus {
+  border-color: var(--accent-orange, #ff6b00);
+}
+
+.watchlist__divider {
+  height: 1px;
+  background-color: var(--border-secondary, #444);
+  margin-bottom: 4px;
+}
+
+.watchlist__header {
+  color: var(--text-muted, #777);
+  padding: 4px 8px;
+  font-size: var(--font-size-xs, 10px);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.watchlist__list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.watchlist__list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.watchlist__list::-webkit-scrollbar-track {
+  background: var(--bg-panel, #121212);
+}
+
+.watchlist__list::-webkit-scrollbar-thumb {
+  background: var(--border-secondary, #444);
+}
+
+.watchlist__row {
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  user-select: none;
+}
+
+.watchlist__row--hovered {
+  background-color: var(--bg-hover, #1e1e1e);
+}
+
+.watchlist__row--selected {
+  background-color: var(--bg-active, #222);
+  border-left-color: var(--accent-orange, #ff6b00);
+}
+
+.watchlist__indicator {
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+
+.watchlist__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.watchlist__section {
+  margin-bottom: 12px;
+}
+
+.watchlist__section-header {
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  margin-bottom: 2px;
+  border-bottom: 1px solid var(--border-primary, #333);
+}

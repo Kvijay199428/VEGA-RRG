@@ -1,0 +1,80 @@
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--status-bar-height, 24px);
+  background-color: var(--bg-secondary, #1a1a1a);
+  border-top: 1px solid var(--border-primary, #333);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-xs, 10px);
+  color: var(--text-secondary, #aaa);
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+.status-bar__left, .status-bar__center, .status-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-bar__center {
+  flex: 1;
+  justify-content: center;
+}
+
+.status-bar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--text-muted, #555);
+}
+
+.status-bar__dot--connected {
+  background-color: #00ff00;
+}
+
+.status-bar__dot--disconnected {
+  background-color: #ff0000;
+}
+
+.status-bar__dot--reconnecting {
+  background-color: #ffff00;
+}
+
+.status-bar__connection {
+  font-weight: bold;
+}
+
+.status-bar__live {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.status-bar__live-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #00ff00;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.status-bar__info {
+  white-space: nowrap;
+}
+
+.status-bar__breadth {
+  display: flex;
+  gap: 8px;
+  font-weight: bold;
+  border-left: 1px solid var(--border-secondary, #444);
+  padding-left: 12px;
+}

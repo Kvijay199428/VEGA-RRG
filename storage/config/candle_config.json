@@ -1,0 +1,1661 @@
+{
+    "NSE_INDEX|NIFTY100 Qualty30": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Consumption": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Rural": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty CoreHousing": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Realty": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty RailwaysPSU": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY100 ESG": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty FPI 150": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty InfraLog": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty REITs Realty": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty EV": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty IT": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty PSE": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Next 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty IPO": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|India VIX": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty MNC": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY IND DIGITAL": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY MICROCAP250": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Sml250 Q50": {
+        "day": {
+            "start_date": null,
+            "end_date": null
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 Value 20": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NiftyM150Momntm50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 LMS Eql": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 Qlty50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY INDIA MFG": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 Flexicap": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 TR 2x Lev": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty100ESGSecLdr": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Smallcap 500": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Multi MQ 50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty AQL 30": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 LowVol50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty HighBeta 50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty200 Alpha 30": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty FinSrv25 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Pvt Bank": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY CONSR DURBL": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty New Consump": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Ind Defence": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty100 Liq 15": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Low Vol 50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS 8 13Yr": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY OIL AND GAS": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Top 10 EW": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Capital Mkt": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Qlty LV 30": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Internet": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty MidSmall 50 50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Pharma": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS 10Yr Cln": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty AQLV 30": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NiftySml250MQ 100": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty SME Emerge": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Cement": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY50 EQL Wgt": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Trans Logis": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 MQVLv50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Commodities": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 PR 1x Inv": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty PSU Bank": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Waves": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 Div Point": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY AlphaLowVol": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY MIDSML 400": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY SMLCAP 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 Health": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Corp MAATR": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty200Momentm30": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY TOTAL MKT": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty100 Enh ESG": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GrowSect 15": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY200 QUALTY30": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY LARGEMID250": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Media": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Housing": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 Shariah": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty CPSE": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Midcap 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 Shariah": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Auto": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Shariah 25": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Multi Mfg": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Infra": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty MidSml Hlth": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty MS Ind Cons": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Bank": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS Compsite": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Mobility": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Div Opps 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty200 Value 30": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Energy": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty NonCyc Cons": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY MID SELECT": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NiftyMS400 MQ 100": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Ind Tourism": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500Momentm50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NiftyConglomerate": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|BHARATBOND-APR31": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        }
+    },
+    "NSE_INDEX|BHARATBOND-APR32": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        }
+    },
+    "NSE_INDEX|BHARATBOND-APR30": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        }
+    },
+    "NSE_INDEX|BHARATBOND-APR33": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        }
+    },
+    "NSE_INDEX|Nifty Fin Service": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Metal": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 EW": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 PR 2x Lev": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY MIDCAP 100": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY MIDCAP 150": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty 100": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY100 LowVol30": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty 200": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Mid Liq 15": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty 500": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Chemicals": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Multi Infra": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS 15YrPlus": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty FinSerExBnk": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Serv Sector": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty100 Alpha 30": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Top 20 EW": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty500 Value 50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS 10Yr": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 USD": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Tata 25 Cap": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY SMLCAP 100": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY SMLCAP 250": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty TMMQ 50": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty FMCG": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty MS Fin Serv": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty Top 15 EW": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY500 MULTICAP": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY HEALTHCARE": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS 4 8Yr": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY M150 QLTY50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY100 EQL Wgt": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty MS IT Telcm": {
+        "day": {
+            "start_date": null,
+            "end_date": null,
+            "completed": false
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty GS 11 15Yr": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|Nifty50 TR 1x Inv": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    },
+    "NSE_INDEX|NIFTY Alpha 50": {
+        "day": {
+            "start_date": "2000-01-01",
+            "end_date": "2021-12-31",
+            "completed": true
+        },
+        "1m": {
+            "start_date": "2022-01-01",
+            "end_date": "2026-05-27",
+            "completed": true
+        }
+    }
+}

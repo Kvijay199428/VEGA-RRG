@@ -1,0 +1,542 @@
+{
+  "D:\\VEGA\\VEGA_RRG\\data.py": {
+    "mtime": 1779388474.108888,
+    "ast_hash": "843eb80335db8d635ec66c67813c7b92",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\script-copier.py": {
+    "mtime": 1778932088.218949,
+    "ast_hash": "14e3d4f1e5dd25b35e02fa3f25a9b17b",
+    "semantic_hash": "14e3d4f1e5dd25b35e02fa3f25a9b17b"
+  },
+  "D:\\VEGA\\VEGA_RRG\\warehouse_pb2.py": {
+    "mtime": 1778956001.4701617,
+    "ast_hash": "0e9e646af2a1048f2b3499455f91d2bb",
+    "semantic_hash": "0e9e646af2a1048f2b3499455f91d2bb"
+  },
+  "D:\\VEGA\\VEGA_RRG\\auth\\angleone\\auth.angleone.json": {
+    "mtime": 1779381324.1443436,
+    "ast_hash": "6cb4efafba17def4046c21ff01d85cd1",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\auth\\dhan\\auth.dhan.json": {
+    "mtime": 1779300627.583845,
+    "ast_hash": "da4993517c551578db59cdf37fe3636c",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\auth\\fyers\\auth.fyers.json": {
+    "mtime": 1779381741.7872002,
+    "ast_hash": "e945baccf7048a55feac2f48105810b7",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\auth\\shoonya\\auth.shoonya.json": {
+    "mtime": 1779381324.0908308,
+    "ast_hash": "2751dfc113d81a0a0e6e43ff76688979",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\auth\\upstox\\auth.upstox.json": {
+    "mtime": 1779381962.7485912,
+    "ast_hash": "08e4352e604328875a4d867df20c24a9",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java": {
+    "mtime": 1779626172.04774,
+    "ast_hash": "d2f1c3dfc83c8e2900f77dbf8fb8282d",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgConfigController.java": {
+    "mtime": 1779640348.8504355,
+    "ast_hash": "7fac0964a171a00ddf2dc5afe0a17293",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java": {
+    "mtime": 1779626443.852114,
+    "ast_hash": "d8b70b5a7abbe2bf9768194e6ae6942f",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\ParsedTimeframe.java": {
+    "mtime": 1779624322.9454715,
+    "ast_hash": "1ec2ea69b8070b60aa184229508b656e",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java": {
+    "mtime": 1779626092.5740874,
+    "ast_hash": "37e468fe0339fa4db8bc3f4f197c75c8",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgTimeframeConfig.java": {
+    "mtime": 1779559679.5787127,
+    "ast_hash": "a98a6e74c5e83d5444f0378459e03c03",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\TimeUnit.java": {
+    "mtime": 1779624316.0984185,
+    "ast_hash": "e0b156441396f1d5d843b168c81bb475",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\config\\CommandBarConfig.java": {
+    "mtime": 1779639832.5712078,
+    "ast_hash": "36f32b1b80f353bae1c110a8f2c1e089",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\config\\SettingsConfig.java": {
+    "mtime": 1779639823.1910992,
+    "ast_hash": "cd0036ad8c12b6f4385a417766458e80",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\model\\config\\WatchlistConfig.java": {
+    "mtime": 1779639814.0379052,
+    "ast_hash": "d5383efdafdc63d89ca13377d9b18d3c",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java": {
+    "mtime": 1779624436.8302064,
+    "ast_hash": "11a640985059b75ad2c7c7fa5ac52df5",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\InflightComputationRegistry.java": {
+    "mtime": 1779626111.3211954,
+    "ast_hash": "cc5c1b1384e0284b2a1929518bb9514e",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgConfigurationService.java": {
+    "mtime": 1779639865.8283176,
+    "ast_hash": "8a494d61ec53c385cecc5868b29ed99b",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgConfigValidator.java": {
+    "mtime": 1779639845.2721505,
+    "ast_hash": "7ab971c76829b6aac227e344f82b163f",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java": {
+    "mtime": 1779626202.348981,
+    "ast_hash": "8791c4212ff09bc8ea603985e066618a",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgSnapshotCache.java": {
+    "mtime": 1779626149.6990802,
+    "ast_hash": "3965ebddf1ce3f38d7e6ee2d466771ce",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgWindowCalculator.java": {
+    "mtime": 1779624416.625059,
+    "ast_hash": "71938d993e06f81e07c3881bc89d1d78",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\SectorComputationPlanner.java": {
+    "mtime": 1779626135.1281898,
+    "ast_hash": "cee8888d0fe2e97b2cbc9cb27d1f9f94",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\SnapshotRefreshScheduler.java": {
+    "mtime": 1779626163.8827662,
+    "ast_hash": "faf2d6be8c07a421b916f8805a944e29",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\TimeframeAggregationService.java": {
+    "mtime": 1779624580.900247,
+    "ast_hash": "a66b039d880d59b63171cd0924b601fc",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\TimeframeParser.java": {
+    "mtime": 1779624336.1656852,
+    "ast_hash": "167f480aab10b00180d3f4979ca055a5",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\TimeSeriesAligner.java": {
+    "mtime": 1779559548.6960533,
+    "ast_hash": "937e05d8c04d70c539d6546056e5a9a8",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\src\\main\\java\\com\\vega\\rrg\\service\\TradingSessionProvider.java": {
+    "mtime": 1779624343.5465274,
+    "ast_hash": "29a68f5996a1142d8930f0458df70c6a",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\.tmp\\.sector.json": {
+    "mtime": 1778957307.4082143,
+    "ast_hash": "f6f6454b7a7dd877df3ce2d5c95f1a5a",
+    "semantic_hash": "f6f6454b7a7dd877df3ce2d5c95f1a5a"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\.tmp\\sector_download_registry.json": {
+    "mtime": 1778957307.404974,
+    "ast_hash": "d75fd4f234fc1fdea96890426a8fae5d",
+    "semantic_hash": "d75fd4f234fc1fdea96890426a8fae5d"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\angleone\\angleone.json": {
+    "mtime": 1778914672.4746027,
+    "ast_hash": "c7e5264738247c0b0864f37a8df56565",
+    "semantic_hash": "c7e5264738247c0b0864f37a8df56565"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\BSE_CM.json": {
+    "mtime": 1778914656.711759,
+    "ast_hash": "6ad846cb1ce942728504c12e5b043aa7",
+    "semantic_hash": "6ad846cb1ce942728504c12e5b043aa7"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\BSE_FO.json": {
+    "mtime": 1778914653.0432703,
+    "ast_hash": "571c1e4b46a9345f4bde245ef900c6e8",
+    "semantic_hash": "571c1e4b46a9345f4bde245ef900c6e8"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\MCX_COM.json": {
+    "mtime": 1778914656.5319636,
+    "ast_hash": "c999918761c47999045ec863420251bd",
+    "semantic_hash": "c999918761c47999045ec863420251bd"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\NSE_CD.json": {
+    "mtime": 1778914652.500526,
+    "ast_hash": "030e34bbb8466c4f55a1a0f2422f3482",
+    "semantic_hash": "030e34bbb8466c4f55a1a0f2422f3482"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\NSE_CM.json": {
+    "mtime": 1778914654.3210387,
+    "ast_hash": "8103cd6c164d78d401c8033cae791c0c",
+    "semantic_hash": "8103cd6c164d78d401c8033cae791c0c"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\NSE_COM.json": {
+    "mtime": 1778914651.4503129,
+    "ast_hash": "8825f44c2543c7f621f9aa5ccb7e3a92",
+    "semantic_hash": "8825f44c2543c7f621f9aa5ccb7e3a92"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\fyers\\NSE_FO.json": {
+    "mtime": 1778914664.9373236,
+    "ast_hash": "b37affcfd8768eed87140bfbbe1ef804",
+    "semantic_hash": "b37affcfd8768eed87140bfbbe1ef804"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\upstox\\upstox.json": {
+    "mtime": 1778914644.5636964,
+    "ast_hash": "4c3e0b2c668bb91a8355cf8bf2307b10",
+    "semantic_hash": "4c3e0b2c668bb91a8355cf8bf2307b10"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\eslint.config.js": {
+    "mtime": 1779187314.1552,
+    "ast_hash": "0355276bc79439afe3c53e3a2470ca1e",
+    "semantic_hash": "0355276bc79439afe3c53e3a2470ca1e"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\package.json": {
+    "mtime": 1779260710.3835135,
+    "ast_hash": "da65d394407d13a1b59d784855edcea9",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\tsconfig.app.json": {
+    "mtime": 1779187314.2709453,
+    "ast_hash": "136630b5accce1ca50663df229534a26",
+    "semantic_hash": "136630b5accce1ca50663df229534a26"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\tsconfig.json": {
+    "mtime": 1779187314.286574,
+    "ast_hash": "a3d39fa780ebff65444de257f291ce6c",
+    "semantic_hash": "a3d39fa780ebff65444de257f291ce6c"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\tsconfig.node.json": {
+    "mtime": 1779187314.302396,
+    "ast_hash": "70bdd0a673bcfc0e828080b306e7c680",
+    "semantic_hash": "70bdd0a673bcfc0e828080b306e7c680"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\vite.config.ts": {
+    "mtime": 1779187314.7248755,
+    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\App.tsx": {
+    "mtime": 1779600499.4759808,
+    "ast_hash": "4f26696183a4c63bf2146efeded6d985",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\main.tsx": {
+    "mtime": 1779187314.7579584,
+    "ast_hash": "787e5a07efeb2bf6209d5937195f2f68",
+    "semantic_hash": "787e5a07efeb2bf6209d5937195f2f68"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\types.ts": {
+    "mtime": 1779626319.5221572,
+    "ast_hash": "9e5ee7f19cf1b2cb315a2b0c555778a8",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\MetricsPanel.tsx": {
+    "mtime": 1779606710.8818612,
+    "ast_hash": "5b5e4c11639512beb3c41505e3b84684",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\RankingPanel.tsx": {
+    "mtime": 1779640362.935241,
+    "ast_hash": "15e21d6db18078fe31ce07c3353f57c0",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\Sidebar.tsx": {
+    "mtime": 1779187716.6228118,
+    "ast_hash": "8849b87b2eeeca9591375d612411ba2e",
+    "semantic_hash": "8849b87b2eeeca9591375d612411ba2e"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\RrgScene.tsx": {
+    "mtime": 1779640216.3355446,
+    "ast_hash": "e5770908cd5a8a0dbf3040df9cfdd3ea",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\AxisLayer.tsx": {
+    "mtime": 1779299866.1540327,
+    "ast_hash": "0f603250ae1fbd8d1fb381451d3bebd7",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\CrosshairCenterLayer.tsx": {
+    "mtime": 1779276033.314663,
+    "ast_hash": "0fae73e048ed56fee0e3a578da6ac77c",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\CrosshairLayer.tsx": {
+    "mtime": 1779257240.170074,
+    "ast_hash": "058d5fa9c717c414f563d81694cd633a",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\GridLayer.tsx": {
+    "mtime": 1779604835.7195363,
+    "ast_hash": "9eab5e7ba401507e38f0ea3730fe2a6b",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\LabelLayer.tsx": {
+    "mtime": 1779643966.345436,
+    "ast_hash": "0e51d2685e0f68545b97d98529ddb3b9",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\PointLayer.tsx": {
+    "mtime": 1779626330.1183712,
+    "ast_hash": "d7acc62ad3046770f4497ce19c383762",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\QuadrantBackgrounds.tsx": {
+    "mtime": 1779276020.125509,
+    "ast_hash": "b82ca555fa65a312d7d9700d440440d5",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\QuadrantLabels.tsx": {
+    "mtime": 1779276020.5002458,
+    "ast_hash": "7f13624579313bd042553807ec760eb1",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\QuadrantLayer.tsx": {
+    "mtime": 1779270194.6898172,
+    "ast_hash": "9fb4ce19f120f6c411c9b5e565a1d419",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\TooltipLayer.tsx": {
+    "mtime": 1779626375.622379,
+    "ast_hash": "29a535b0ed444c697e81c3eb2fb12bda",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\chart\\layers\\TrailLayer.tsx": {
+    "mtime": 1779643968.3772545,
+    "ast_hash": "e8a32cefa609b511d619f465962ed3a8",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\settings\\SettingsModal.tsx": {
+    "mtime": 1779640194.84243,
+    "ast_hash": "0de8f852df61369ed0be80ce0aa832e8",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\terminal\\CommandBar.tsx": {
+    "mtime": 1779643964.3132806,
+    "ast_hash": "f58b2f1014bac82e214b8ddc8452871f",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\terminal\\StatusBar.tsx": {
+    "mtime": 1779257240.2683446,
+    "ast_hash": "6431fab842f2c3be2d6cd360f4cf2e1f",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\terminal\\WatchlistPanel.tsx": {
+    "mtime": 1779606675.6776133,
+    "ast_hash": "a3e4e4870bc32eb1700b1833323f00c2",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\components\\terminal\\WatchlistSettingsModal.tsx": {
+    "mtime": 1779606666.2706432,
+    "ast_hash": "f1bad215658a856cda1efff2abc8c2e2",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\core\\animation.ts": {
+    "mtime": 1779256851.0185475,
+    "ast_hash": "745fd8729d830c90a9270f3a755a2891",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\core\\geometry.ts": {
+    "mtime": 1779605611.4025176,
+    "ast_hash": "2fa5bf07c38b25efa0888fe581d5f064",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\core\\math.ts": {
+    "mtime": 1779624721.9823327,
+    "ast_hash": "3564b2125c0a95ab27da57282c02b027",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\core\\scales.ts": {
+    "mtime": 1779604824.170224,
+    "ast_hash": "26d4aa2f817fd9120fd4b7ca28ff3550",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\core\\TimeframeParser.ts": {
+    "mtime": 1779624656.3296993,
+    "ast_hash": "063e445f3857c37f1d7bba7024c280ab",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\hooks\\useAutoFetch.ts": {
+    "mtime": 1779640201.0722256,
+    "ast_hash": "5b67c6fa15e109e97b86129b5b0fa6d9",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\hooks\\useKeyboardShortcuts.ts": {
+    "mtime": 1779601911.7721412,
+    "ast_hash": "1f7d33f38d179aaa78c2615dba8eebd9",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\services\\api.ts": {
+    "mtime": 1779639894.4891984,
+    "ast_hash": "98d8dfbe2633a49cb1db26fd27406ab5",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\services\\buildRrgQuery.ts": {
+    "mtime": 1779626271.1019032,
+    "ast_hash": "7942ac4215fa6b7797e68b267495bb3a",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\stores\\useChartSettingsStore.ts": {
+    "mtime": 1779639939.7239208,
+    "ast_hash": "3da4d91a83154db032cd070443defcac",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\stores\\useCommandBarStore.ts": {
+    "mtime": 1779639908.7894585,
+    "ast_hash": "c57eb417f626ae399aa86e7c1533b9d6",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\stores\\useRrgStore.ts": {
+    "mtime": 1779640123.3428328,
+    "ast_hash": "cef274b63b2a257a67007503addef045",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\stores\\useViewportStore.ts": {
+    "mtime": 1779604187.293743,
+    "ast_hash": "a1fde528877722056334bc012805c971",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\themes\\bloomberg.ts": {
+    "mtime": 1779256654.8917997,
+    "ast_hash": "a6d64baab0ed9a5928c5aae064979be9",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\storage\\config\\candle_config.json": {
+    "mtime": 1779557902.3538077,
+    "ast_hash": "8c9373b74a1965ca1b6fd42cbe012a00",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\storage\\config\\rrg\\rrg_commandbar.json": {
+    "mtime": 1779643619.6267526,
+    "ast_hash": "5bd2530cb51b767283302b1c58a65996",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\storage\\config\\rrg\\rrg_settings.json": {
+    "mtime": 1779640711.037326,
+    "ast_hash": "416ca33bd362ad38b25d3b12a7b2c49a",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\storage\\config\\rrg\\sector_rrg_watchlist.json": {
+    "mtime": 1779640672.6872833,
+    "ast_hash": "b2cafb753c6b0a0c4b1e14502ffdf652",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\README.md": {
+    "mtime": 1778919876.1240199,
+    "ast_hash": "6d09921f7fe2bccfb7310857fee93a1a",
+    "semantic_hash": "6d09921f7fe2bccfb7310857fee93a1a"
+  },
+  "D:\\VEGA\\VEGA_RRG\\rrg.md": {
+    "mtime": 1779627162.3275795,
+    "ast_hash": "bbee7b3378cc15279d0495c81c7bf116",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\.agents\\rules\\graphify.md": {
+    "mtime": 1778919544.8678586,
+    "ast_hash": "56d322bc02e948acf8a5abc7fd5d20ff",
+    "semantic_hash": "56d322bc02e948acf8a5abc7fd5d20ff"
+  },
+  "D:\\VEGA\\VEGA_RRG\\.agents\\workflows\\graphify.md": {
+    "mtime": 1778919544.8698597,
+    "ast_hash": "84de69efd46ab0b8430393bd4188f8f2",
+    "semantic_hash": "84de69efd46ab0b8430393bd4188f8f2"
+  },
+  "D:\\VEGA\\VEGA_RRG\\backend\\dir_output.txt": {
+    "mtime": 1779560014.3360524,
+    "ast_hash": "41e46e581c18db2b0e5bca30fd189049",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\BFO.txt": {
+    "mtime": 1778914649.0637896,
+    "ast_hash": "4bfb02e6b0005816104d894134c2e8b1",
+    "semantic_hash": "4bfb02e6b0005816104d894134c2e8b1"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\BSE.txt": {
+    "mtime": 1778914649.7590003,
+    "ast_hash": "ec012ef05d8c6f5ad16ed45659601e2e",
+    "semantic_hash": "ec012ef05d8c6f5ad16ed45659601e2e"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\CDS.txt": {
+    "mtime": 1778914644.2964356,
+    "ast_hash": "63b3f16cb5459f30d5888c2f60298754",
+    "semantic_hash": "63b3f16cb5459f30d5888c2f60298754"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\MCX.txt": {
+    "mtime": 1778914646.766441,
+    "ast_hash": "3f9a7a5e55ec6dc804ff42d27a9c1f28",
+    "semantic_hash": "3f9a7a5e55ec6dc804ff42d27a9c1f28"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\NCX.txt": {
+    "mtime": 1778914644.2212164,
+    "ast_hash": "72a65059e75a25d7bc2e2f74b1bfa375",
+    "semantic_hash": "72a65059e75a25d7bc2e2f74b1bfa375"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\NFO.txt": {
+    "mtime": 1778914645.7756834,
+    "ast_hash": "e297b5293e57c19f3bde77dcd557dcfd",
+    "semantic_hash": "e297b5293e57c19f3bde77dcd557dcfd"
+  },
+  "D:\\VEGA\\VEGA_RRG\\data\\instruments\\shoonya\\NSE.txt": {
+    "mtime": 1778914644.1420517,
+    "ast_hash": "ceeaba84aefec44313cae133bd733dd5",
+    "semantic_hash": "ceeaba84aefec44313cae133bd733dd5"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\index.html": {
+    "mtime": 1779256645.3430889,
+    "ast_hash": "38bd1297c05108150a1362ad2f429bfd",
+    "semantic_hash": ""
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\README.md": {
+    "mtime": 1779187314.3671026,
+    "ast_hash": "f6e3faf55d738cf2affe1b44195f27cf",
+    "semantic_hash": "f6e3faf55d738cf2affe1b44195f27cf"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\public\\favicon.svg": {
+    "mtime": 1779187314.4864774,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": "7e840862161341271697daa99a40d76b"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\public\\icons.svg": {
+    "mtime": 1779187314.5330563,
+    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
+    "semantic_hash": "3b4fcfcf393eca4d264dca4a4663bc37"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\assets\\hero.png": {
+    "mtime": 1779187314.4187167,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": "aead493361b27e7510691c5d7072dfc1"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\assets\\react.svg": {
+    "mtime": 1779187314.5920856,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": "f0402b67b6ce880f65666bb49e841696"
+  },
+  "D:\\VEGA\\VEGA_RRG\\frontend\\src\\assets\\vite.svg": {
+    "mtime": 1779187314.652821,
+    "ast_hash": "9960a24288958394ac50e57ff638b036",
+    "semantic_hash": "9960a24288958394ac50e57ff638b036"
+  }
+}

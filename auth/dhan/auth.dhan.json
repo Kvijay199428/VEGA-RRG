@@ -1,0 +1,13 @@
+{
+  "broker" : "DHAN",
+  "accounts" : {
+    "1" : {
+      "clientId" : "1102607905",
+      "accessToken" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJkaGFuIiwicGFydG5lcklkIjoiIiwiZXhwIjoxNzgwMjg4MjM5LCJpYXQiOjE3ODAyMDE4MzksInRva2VuQ29uc3VtZXJUeXBlIjoiQVBQIiwiZGhhbkNsaWVudElkIjoiMTEwMjYwNzkwNSJ9.75NKU2Awp5jWhwO-FERFOsQAX4vTwkkmdmXCMEdpViPjyTp7qjDUeD9KdZ7rmdzvxOB_3wCS3Lg2_AsgSzx0mw",
+      "expiryTime" : "2026-06-01T10:00:39.087",
+      "generatedTs" : "2026-05-31T04:30:35.491360400Z",
+      "validityTs" : "2026-06-01T04:30:39.087Z"
+    }
+  },
+  "generatedTs" : "2026-05-31T04:30:35.491360400Z"
+}

@@ -1,0 +1,686 @@
+{
+  "version" : 1,
+  "updatedAt" : 1779640672683,
+  "watchlistOnlyResampling" : false,
+  "watchlists" : [ {
+    "id" : "default",
+    "name" : "Default",
+    "active" : true,
+    "sectors" : [ {
+      "symbol" : "NSE_INDEX_Nifty 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_India VIX",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty 100",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty 200",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty 500",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY Alpha 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY AlphaLowVol",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty AQL 30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty AQLV 30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Auto",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Bank",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Capital Mkt",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Cement",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Chemicals",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Commodities",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY CONSR DURBL",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Consumption",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty CoreHousing",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Corp MAATR",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty CPSE",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Div Opps 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Energy",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty EV",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Fin Service",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty FinSerExBnk",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty FinSrv25 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty FMCG",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty FPI 150",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GrowSect 15",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS 10Yr",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS 10Yr Cln",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS 11 15Yr",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS 15YrPlus",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS 4 8Yr",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS 8 13Yr",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty GS Compsite",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY HEALTHCARE",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty HighBeta 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Housing",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Ind Defence",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY IND DIGITAL",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Ind Tourism",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY INDIA MFG",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Infra",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty InfraLog",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Internet",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty IPO",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty IT",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY LARGEMID250",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Low Vol 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY M150 QLTY50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Media",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Metal",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY MICROCAP250",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Mid Liq 15",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY MID SELECT",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY MIDCAP 100",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY MIDCAP 150",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Midcap 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty MidSmall 50 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY MIDSML 400",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty MidSml Hlth",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty MNC",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Mobility",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty MS Fin Serv",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty MS Ind Cons",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty MS IT Telcm",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Multi Infra",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Multi Mfg",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Multi MQ 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty New Consump",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Next 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty NonCyc Cons",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY OIL AND GAS",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Pharma",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty PSE",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty PSU Bank",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Pvt Bank",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Qlty LV 30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty RailwaysPSU",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Realty",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty REITs Realty",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Rural",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : false
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Serv Sector",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Shariah 25",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Smallcap 500",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty SME Emerge",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Sml250 Q50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY SMLCAP 100",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY SMLCAP 250",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY SMLCAP 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Tata 25 Cap",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty TMMQ 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Top 10 EW",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Top 15 EW",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Top 20 EW",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY TOTAL MKT",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Trans Logis",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty Waves",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty100 Alpha 30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty100 Enh ESG",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY100 EQL Wgt",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY100 ESG",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty100 Liq 15",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY100 LowVol30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY100 Qualty30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty100ESGSecLdr",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty200 Alpha 30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY200 QUALTY30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty200 Value 30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty200Momentm30",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 Div Point",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY50 EQL Wgt",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 PR 1x Inv",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 PR 2x Lev",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 Shariah",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 TR 1x Inv",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 TR 2x Lev",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 USD",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty50 Value 20",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 EW",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 Flexicap",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 Health",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 LMS Eql",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 LowVol50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 MQVLv50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NIFTY500 MULTICAP",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 Qlty50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 Shariah",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500 Value 50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_Nifty500Momentm50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NiftyConglomerate",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NiftyM150Momntm50",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NiftyMS400 MQ 100",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    }, {
+      "symbol" : "NSE_INDEX_NiftySml250MQ 100",
+      "pinned" : false,
+      "priority" : 0,
+      "hidden" : true
+    } ]
+  } ]
+}

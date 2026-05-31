@@ -1,0 +1,1638 @@
+{
+  "nodes": [
+    {
+      "id": "data_py",
+      "label": "data.py",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "vega_rrg_data_load_access_token",
+      "label": "load_access_token()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L165"
+    },
+    {
+      "id": "vega_rrg_data_load_index_instruments",
+      "label": "load_index_instruments()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L189"
+    },
+    {
+      "id": "vega_rrg_data_split_date_ranges",
+      "label": "split_date_ranges()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L218"
+    },
+    {
+      "id": "vega_rrg_data_fetch_candle_chunk",
+      "label": "fetch_candle_chunk()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L252"
+    },
+    {
+      "id": "vega_rrg_data_fetch_full_history",
+      "label": "fetch_full_history()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L336"
+    },
+    {
+      "id": "vega_rrg_data_build_proto_file",
+      "label": "build_proto_file()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L389"
+    },
+    {
+      "id": "vega_rrg_data_sanitize_filename",
+      "label": "sanitize_filename()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L442"
+    },
+    {
+      "id": "vega_rrg_data_save_proto_file",
+      "label": "save_proto_file()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L452"
+    },
+    {
+      "id": "vega_rrg_data_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "data.py",
+      "source_location": "L488"
+    },
+    {
+      "id": "script_copier_py",
+      "label": "script-copier.py",
+      "file_type": "code",
+      "source_file": "script-copier.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "vega_rrg_script_copier_collect_files",
+      "label": "collect_files()",
+      "file_type": "code",
+      "source_file": "script-copier.py",
+      "source_location": "L73"
+    },
+    {
+      "id": "vega_rrg_script_copier_lang_tag",
+      "label": "lang_tag()",
+      "file_type": "code",
+      "source_file": "script-copier.py",
+      "source_location": "L93"
+    },
+    {
+      "id": "vega_rrg_script_copier_build_markdown",
+      "label": "build_markdown()",
+      "file_type": "code",
+      "source_file": "script-copier.py",
+      "source_location": "L98"
+    },
+    {
+      "id": "vega_rrg_script_copier_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "script-copier.py",
+      "source_location": "L122"
+    },
+    {
+      "id": "vega_rrg_script_copier_rationale_1",
+      "label": "r\"\"\" script-copier.py Recursively scans d:\\VEGA\\VEGA_AUTH\\backend\\src\\main\\jav",
+      "file_type": "rationale",
+      "source_file": "script-copier.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "vega_rrg_script_copier_rationale_74",
+      "label": "Recursively collect all script/source files, sorted by path.",
+      "file_type": "rationale",
+      "source_file": "script-copier.py",
+      "source_location": "L74"
+    },
+    {
+      "id": "vega_rrg_script_copier_rationale_94",
+      "label": "Return the markdown language tag for a file extension.",
+      "file_type": "rationale",
+      "source_file": "script-copier.py",
+      "source_location": "L94"
+    },
+    {
+      "id": "vega_rrg_script_copier_rationale_99",
+      "label": "Build the full markdown string with all file contents.",
+      "file_type": "rationale",
+      "source_file": "script-copier.py",
+      "source_location": "L99"
+    },
+    {
+      "id": "warehouse_pb2_py",
+      "label": "warehouse_pb2.py",
+      "file_type": "code",
+      "source_file": "warehouse_pb2.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "backend_src_main_java_com_vega_rrg_rrgapplication_java",
+      "label": "RrgApplication.java",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "rrg_rrgapplication_rrgapplication",
+      "label": "RrgApplication",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L6"
+    },
+    {
+      "id": "rrg_rrgapplication_rrgapplication_main",
+      "label": ".main()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L8"
+    },
+    {
+      "id": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "label": "RrgController.java",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "controller_rrgcontroller_rrgcontroller",
+      "label": "RrgController",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L13"
+    },
+    {
+      "id": "controller_rrgcontroller_rrgcontroller_getsnapshot",
+      "label": ".getSnapshot()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L21"
+    },
+    {
+      "id": "controller_rrgcontroller_rrgcontroller_getsectors",
+      "label": ".getSectors()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L43"
+    },
+    {
+      "id": "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "label": "RrgPoint.java",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "model_rrgpoint_rrgpoint",
+      "label": "RrgPoint",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L7"
+    },
+    {
+      "id": "model_rrgpoint_trailpoint",
+      "label": "TrailPoint",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L16"
+    },
+    {
+      "id": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "label": "CandleService.java",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "service_candleservice_candleservice",
+      "label": "CandleService",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L11"
+    },
+    {
+      "id": "service_candleservice_candleservice_loadcandles",
+      "label": ".loadCandles()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L16"
+    },
+    {
+      "id": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "label": "RrgService.java",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L1"
+    },
+    {
+      "id": "service_rrgservice_rrgservice",
+      "label": "RrgService",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L12"
+    },
+    {
+      "id": "service_rrgservice_rrgservice_calculaterrg",
+      "label": ".calculateRrg()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L18"
+    },
+    {
+      "id": "service_rrgservice_rrgservice_calculateforsector",
+      "label": ".calculateForSector()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L32"
+    },
+    {
+      "id": "service_rrgservice_rrgservice_calculatenormalizedseries",
+      "label": ".calculateNormalizedSeries()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L78"
+    },
+    {
+      "id": "service_rrgservice_rrgservice_getquadrant",
+      "label": ".getQuadrant()",
+      "file_type": "code",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L95"
+    },
+    {
+      "id": "frontend_eslint_config_js",
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_postcss_config_js",
+      "label": "postcss.config.js",
+      "file_type": "code",
+      "source_file": "frontend\\postcss.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_tailwind_config_js",
+      "label": "tailwind.config.js",
+      "file_type": "code",
+      "source_file": "frontend\\tailwind.config.js",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_vite_config_ts",
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "frontend\\vite.config.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_app_tsx",
+      "label": "App.tsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_app_app",
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_main_tsx",
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\main.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "frontend_src_types_ts",
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "frontend\\src\\types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_types_trailpoint",
+      "label": "TrailPoint",
+      "file_type": "code",
+      "source_file": "frontend\\src\\types.ts",
+      "source_location": "L1"
+    },
+    {
+      "id": "src_types_rrgpoint",
+      "label": "RrgPoint",
+      "file_type": "code",
+      "source_file": "frontend\\src\\types.ts",
+      "source_location": "L7"
+    },
+    {
+      "id": "frontend_src_components_rrggraph_tsx",
+      "label": "RrgGraph.tsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_rrggraph_rrggraphprops",
+      "label": "RrgGraphProps",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L5"
+    },
+    {
+      "id": "components_rrggraph_rrggraph",
+      "label": "RrgGraph()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L9"
+    },
+    {
+      "id": "frontend_src_components_sidebar_tsx",
+      "label": "Sidebar.tsx",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L1"
+    },
+    {
+      "id": "components_sidebar_sidebarprops",
+      "label": "SidebarProps",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L4"
+    },
+    {
+      "id": "components_sidebar_sidebar",
+      "label": "Sidebar()",
+      "file_type": "code",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L14"
+    }
+  ],
+  "edges": [
+    {
+      "source": "data_py",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L47",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "logging",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L50",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "urllib_parse",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "requests",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "warehouse_pb2",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_load_access_token",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L165",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_load_index_instruments",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L189",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_split_date_ranges",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L218",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_fetch_candle_chunk",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L252",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_fetch_full_history",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L336",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_build_proto_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L389",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_sanitize_filename",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L442",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_save_proto_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L452",
+      "weight": 1.0
+    },
+    {
+      "source": "data_py",
+      "target": "vega_rrg_data_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L488",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_fetch_full_history",
+      "target": "vega_rrg_data_split_date_ranges",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L346",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_fetch_full_history",
+      "target": "vega_rrg_data_fetch_candle_chunk",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L368",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_save_proto_file",
+      "target": "vega_rrg_data_sanitize_filename",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L458",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_main",
+      "target": "vega_rrg_data_load_access_token",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L492",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_main",
+      "target": "vega_rrg_data_load_index_instruments",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L496",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_main",
+      "target": "vega_rrg_data_fetch_full_history",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L522",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_main",
+      "target": "vega_rrg_data_build_proto_file",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L543",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_data_main",
+      "target": "vega_rrg_data_save_proto_file",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "data.py",
+      "source_location": "L549",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "sys",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "argparse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "datetime",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "io",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "vega_rrg_script_copier_collect_files",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "vega_rrg_script_copier_lang_tag",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L93",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "vega_rrg_script_copier_build_markdown",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L98",
+      "weight": 1.0
+    },
+    {
+      "source": "script_copier_py",
+      "target": "vega_rrg_script_copier_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L122",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_build_markdown",
+      "target": "vega_rrg_script_copier_lang_tag",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L104",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_main",
+      "target": "vega_rrg_script_copier_collect_files",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L138",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_main",
+      "target": "vega_rrg_script_copier_build_markdown",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L162",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_rationale_1",
+      "target": "script_copier_py",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_rationale_74",
+      "target": "vega_rrg_script_copier_collect_files",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L74",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_rationale_94",
+      "target": "vega_rrg_script_copier_lang_tag",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L94",
+      "weight": 1.0
+    },
+    {
+      "source": "vega_rrg_script_copier_rationale_99",
+      "target": "vega_rrg_script_copier_build_markdown",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "script-copier.py",
+      "source_location": "L99",
+      "weight": 1.0
+    },
+    {
+      "source": "warehouse_pb2_py",
+      "target": "google_protobuf",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "warehouse_pb2.py",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "warehouse_pb2_py",
+      "target": "google_protobuf",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "warehouse_pb2.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "warehouse_pb2_py",
+      "target": "google_protobuf",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "warehouse_pb2.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "warehouse_pb2_py",
+      "target": "google_protobuf",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "warehouse_pb2.py",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "warehouse_pb2_py",
+      "target": "google_protobuf_internal",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "warehouse_pb2.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_rrgapplication_java",
+      "target": "springapplication",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_rrgapplication_java",
+      "target": "springbootapplication",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_rrgapplication_java",
+      "target": "rrg_rrgapplication_rrgapplication",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "rrg_rrgapplication_rrgapplication",
+      "target": "rrg_rrgapplication_rrgapplication_main",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\RrgApplication.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "rrgpoint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "rrgservice",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "autowired",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "annotation",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "file",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "arrays",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "list",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "collectors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "controller_rrgcontroller_rrgcontroller",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "controller_rrgcontroller_rrgcontroller",
+      "target": "controller_rrgcontroller_rrgcontroller_getsnapshot",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "controller_rrgcontroller_rrgcontroller",
+      "target": "controller_rrgcontroller_rrgcontroller_getsectors",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L43",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "target": "builder",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "target": "data",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "target": "list",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "target": "model_rrgpoint_rrgpoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_model_rrgpoint_java",
+      "target": "model_rrgpoint_trailpoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\model\\RrgPoint.java",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "protocandlefile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "service",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "fileinputstream",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "ioexception",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "path",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "paths",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "optional",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_candleservice_java",
+      "target": "service_candleservice_candleservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "service_candleservice_candleservice",
+      "target": "service_candleservice_candleservice_loadcandles",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\CandleService.java",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "rrgpoint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "protocandle",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "protocandlefile",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "autowired",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "service",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "util",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "collectors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "service_rrgservice_rrgservice",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice",
+      "target": "service_rrgservice_rrgservice_calculaterrg",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice",
+      "target": "service_rrgservice_rrgservice_calculateforsector",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L32",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice",
+      "target": "service_rrgservice_rrgservice_calculatenormalizedseries",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L78",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice",
+      "target": "service_rrgservice_rrgservice_getquadrant",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L95",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice_calculaterrg",
+      "target": "service_rrgservice_rrgservice_calculateforsector",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice_calculateforsector",
+      "target": "service_rrgservice_rrgservice_calculatenormalizedseries",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L51",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice_calculateforsector",
+      "target": "service_rrgservice_rrgservice_getquadrant",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L73",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_eslint_config_js",
+      "target": "js",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_eslint_config_js",
+      "target": "globals",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_eslint_config_js",
+      "target": "eslint_plugin_react_hooks",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_eslint_config_js",
+      "target": "eslint_plugin_react_refresh",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_eslint_config_js",
+      "target": "typescript_eslint",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_eslint_config_js",
+      "target": "config",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\eslint.config.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_vite_config_ts",
+      "target": "vite",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\vite.config.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_vite_config_ts",
+      "target": "plugin_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\vite.config.ts",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "axios",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_rrggraph_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_components_sidebar_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "frontend_src_types_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "src_types_rrgpoint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_app_tsx",
+      "target": "src_app_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\App.tsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_main_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\main.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_main_tsx",
+      "target": "client",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\main.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_main_tsx",
+      "target": "d_vega_vega_rrg_frontend_src_index_css",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\main.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_main_tsx",
+      "target": "frontend_src_app_tsx",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\main.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_types_ts",
+      "target": "src_types_trailpoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\types.ts",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_types_ts",
+      "target": "src_types_rrgpoint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\types.ts",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_rrggraph_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_rrggraph_tsx",
+      "target": "d3",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_rrggraph_tsx",
+      "target": "frontend_src_types_ts",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_rrggraph_tsx",
+      "target": "src_types_rrgpoint",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_rrggraph_tsx",
+      "target": "components_rrggraph_rrggraphprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_rrggraph_tsx",
+      "target": "components_rrggraph_rrggraph",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\RrgGraph.tsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_sidebar_tsx",
+      "target": "react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_sidebar_tsx",
+      "target": "axios",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_sidebar_tsx",
+      "target": "components_sidebar_sidebarprops",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "frontend_src_components_sidebar_tsx",
+      "target": "components_sidebar_sidebar",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "frontend\\src\\components\\Sidebar.tsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "d_vega_vega_rrg_backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "model_rrgpoint_rrgpoint",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "d_vega_vega_rrg_backend_src_main_java_com_vega_rrg_controller_rrgcontroller_java",
+      "target": "service_rrgservice_rrgservice",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "d_vega_vega_rrg_backend_src_main_java_com_vega_rrg_service_rrgservice_java",
+      "target": "model_rrgpoint_rrgpoint",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "controller_rrgcontroller_rrgcontroller_getsnapshot",
+      "target": "service_rrgservice_rrgservice_calculaterrg",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\controller\\RrgController.java",
+      "source_location": "L40",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice_calculaterrg",
+      "target": "service_candleservice_candleservice_loadcandles",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "service_rrgservice_rrgservice_calculateforsector",
+      "target": "service_candleservice_candleservice_loadcandles",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "backend\\src\\main\\java\\com\\vega\\rrg\\service\\RrgService.java",
+      "source_location": "L33",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

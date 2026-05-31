@@ -1,0 +1,50 @@
+.metrics {
+  padding: 12px;
+  background-color: var(--bg-panel, #121212);
+  border-top: 1px solid var(--border-primary, #333);
+  height: 240px;
+  background: var(--bg-panel);
+  padding: var(--space-md) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border-primary);
+  font-family: var(--font-mono, 'IBM Plex Mono', monospace);
+  font-size: var(--font-size-sm, 12px);
+  color: var(--text-primary, #eee);
+  box-sizing: border-box;
+}
+
+.metrics__empty {
+  color: var(--text-muted, #777);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.metrics__header {
+  color: var(--text-primary, #eee);
+  font-weight: bold;
+}
+
+.metrics__divider {
+  color: var(--border-secondary, #444);
+  margin-bottom: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.metrics__row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.metrics__label {
+  color: var(--text-secondary, #aaa);
+}
+
+.metrics__value {
+  color: var(--text-primary, #eee);
+  text-align: right;
+}
