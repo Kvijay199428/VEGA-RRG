@@ -1,0 +1,76 @@
+{
+  "version" : 1,
+  "updatedAt" : 1779645704487,
+  "optimization" : {
+    "minimalWindowResampling" : true,
+    "watchlistOnlyResampling" : true,
+    "backgroundSnapshotRefresh" : true,
+    "snapshotCacheEnabled" : true,
+    "snapshotCacheTtlEnabled" : true
+  },
+  "rendering" : {
+    "trailsEnabled" : true,
+    "trailArrowsEnabled" : true,
+    "trailGlowEnabled" : true,
+    "labelsEnabled" : true,
+    "adaptiveLabels" : true,
+    "semanticZoom" : true
+  },
+  "camera" : {
+    "autoFitEnabled" : true,
+    "fitPadding" : 0.5,
+    "smoothInterpolation" : true,
+    "maxZoom" : 6.0,
+    "minInteractionZoom" : 0.8
+  },
+  "interaction" : {
+    "hoverHighlight" : true,
+    "selectionHighlight" : true,
+    "tooltipEnabled" : true
+  },
+  "trailReplay" : {
+    "enabled" : true,
+    "timeframeDateRanges" : {
+      "MINUTE" : {
+        "rangeType" : "WEEK",
+        "rangeValue" : 1,
+        "defaultTrailLength" : 30,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : true
+      },
+      "HOUR" : {
+        "rangeType" : "WEEK",
+        "rangeValue" : 3,
+        "defaultTrailLength" : 20,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : true
+      },
+      "DAY" : {
+        "rangeType" : "MONTH",
+        "rangeValue" : 3,
+        "defaultTrailLength" : 15,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : true
+      },
+      "WEEK" : {
+        "rangeType" : "MONTH",
+        "rangeValue" : 9,
+        "defaultTrailLength" : 12,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : false
+      },
+      "MONTH" : {
+        "rangeType" : "YEAR",
+        "rangeValue" : 10,
+        "defaultTrailLength" : 10,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : false
+      }
+    },
+    "replayDefaults" : {
+      "restoreLastReplayDate" : true,
+      "rememberLastTrailLength" : true,
+      "rememberPlaybackSpeed" : true
+    }
+  }
+}

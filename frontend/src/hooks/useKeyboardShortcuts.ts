@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useRrgStore } from '../stores/useRrgStore';
 import { useViewportStore } from '../stores/useViewportStore';
+import { useReplayStore } from '../stores/useReplayStore';
 
-export function useKeyboardShortcuts() {
-  const setIsPlaying = useRrgStore(s => s.setIsPlaying);
-  const isPlaying = useRrgStore(s => s.isPlaying);
+export const useKeyboardShortcuts = () => {
+  const setIsPlaying = useReplayStore(s => s.setIsPlaying);
+  const isPlaying = useReplayStore(s => s.isPlaying);
   const enrichedData = useRrgStore(s => s.enrichedData);
   const selectedSector = useRrgStore(s => s.selectedSector);
   const setSelectedSector = useRrgStore(s => s.setSelectedSector);

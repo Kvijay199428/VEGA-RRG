@@ -21,10 +21,12 @@ if sys.stdout.encoding.lower() != 'utf-8':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
 # ── Configuration ──────────────────────────────────────────────────────────────
-SOURCE_DIR = [Path(r"D:\VEGA\VEGA_RRG\backend"),
-                Path(r"D:\VEGA\VEGA_RRG\config"),
+SOURCE_DIR = [
+                # Path(r"D:\VEGA\VEGA_RRG\backend"),
                 Path(r"D:\VEGA\VEGA_RRG\frontend"),
                 Path(r"D:\VEGA\VEGA_RRG\storage\config\rrg"),
+                Path(r"D:\VEGA\VEGA_RRG\storage\config"),
+                Path(r"D:\VEGA\VEGA_RRG\storage\user")
                 ]
 
 # Directories to exclude from scanning

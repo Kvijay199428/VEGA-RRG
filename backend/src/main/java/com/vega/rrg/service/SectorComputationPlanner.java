@@ -48,19 +48,22 @@ public class SectorComputationPlanner {
             boolean isSelected = sector.equals(selectedSector);
             boolean isHovered = sector.equals(hoveredSector);
 
-            if (replayMode || !watchlistOnlyResampling || isSelected || isHovered || isWatchlist) {
+            Optional<RrgPoint> cachedOpt = cache.get(benchmark, parsedTf.getCanonical(), trailLength, normalized, sector);
+            
+            if (cachedOpt.isEmpty()) {
                 assignPriority(sector, isSelected, isHovered, isWatchlist, priority1, priority2, priority3, priority4);
             } else {
-                Optional<RrgPoint> cachedOpt = cache.get(benchmark, parsedTf.getCanonical(), trailLength, normalized, sector);
-                if (cachedOpt.isEmpty()) {
-                    assignPriority(sector, false, false, false, priority1, priority2, priority3, priority4);
-                } else {
-                    RrgPoint cached = cachedOpt.get();
-                    if (now - cached.getComputedAt() > ttlMs) {
-                        assignPriority(sector, false, false, false, priority1, priority2, priority3, priority4);
+                RrgPoint cached = cachedOpt.get();
+                boolean isExpired = (now - cached.getComputedAt() > ttlMs);
+                
+                if (isExpired || replayMode) {
+                    if (!watchlistOnlyResampling || isSelected || isHovered || isWatchlist) {
+                        assignPriority(sector, isSelected, isHovered, isWatchlist, priority1, priority2, priority3, priority4);
                     } else {
                         plan.cachedOnly.add(sector);
                     }
+                } else {
+                    plan.cachedOnly.add(sector);
                 }
             }
         }

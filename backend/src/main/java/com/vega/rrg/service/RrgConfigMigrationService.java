@@ -8,11 +8,26 @@ public class RrgConfigMigrationService {
 
     public SettingsConfig migrate(SettingsConfig config) {
         if (config == null) return new SettingsConfig();
+
+        // Forward-migration: inject default trailReplay for JSON files that predate this field
+        if (config.trailReplay() == null) {
+            return new SettingsConfig(
+                config.version(),
+                config.updatedAt(),
+                config.optimization(),
+                config.rendering(),
+                config.camera(),
+                config.interaction(),
+                config.windowing(),
+                new SettingsConfig.TrailReplayConfig()
+            );
+        }
+
         return config;
     }
 
-    public CommandBarConfig migrate(CommandBarConfig config) {
-        if (config == null) return new CommandBarConfig();
+    public RrgPreferences migrate(RrgPreferences config) {
+        if (config == null) return new RrgPreferences();
         return config;
     }
 
@@ -33,6 +48,11 @@ public class RrgConfigMigrationService {
 
     public FeatureFlagsConfig migrate(FeatureFlagsConfig config) {
         if (config == null) return new FeatureFlagsConfig();
+        return config;
+    }
+
+    public ReplayConfig migrate(ReplayConfig config) {
+        if (config == null) return new ReplayConfig();
         return config;
     }
 }

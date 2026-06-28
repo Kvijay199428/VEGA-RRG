@@ -1,6 +1,41 @@
 import { create } from 'zustand';
 import { fetchSettingsConfig, updateSettingsConfig } from '../services/api';
 
+// Mirrors SettingsConfig.TrailReplayConfig from backend
+export interface TimeframeReplayConfig {
+  rangeType: 'WEEK' | 'MONTH' | 'YEAR';
+  rangeValue: number;
+  defaultTrailLength: number;
+  maxTrailLength: number;
+  autoApplyDefaultTrail: boolean;
+}
+
+export interface TrailReplayConfig {
+  enabled: boolean;
+  timeframeDateRanges: Record<string, TimeframeReplayConfig>;
+  replayDefaults: {
+    restoreLastReplayDate: boolean;
+    rememberLastTrailLength: boolean;
+    rememberPlaybackSpeed: boolean;
+  };
+}
+
+const DEFAULT_TRAIL_REPLAY_CONFIG: TrailReplayConfig = {
+  enabled: true,
+  timeframeDateRanges: {
+    MINUTE: { rangeType: 'WEEK',  rangeValue: 1,  defaultTrailLength: 30, maxTrailLength: 120, autoApplyDefaultTrail: true },
+    HOUR:   { rangeType: 'WEEK',  rangeValue: 3,  defaultTrailLength: 20, maxTrailLength: 120, autoApplyDefaultTrail: true },
+    DAY:    { rangeType: 'MONTH', rangeValue: 3,  defaultTrailLength: 15, maxTrailLength: 120, autoApplyDefaultTrail: true },
+    WEEK:   { rangeType: 'MONTH', rangeValue: 9,  defaultTrailLength: 12, maxTrailLength: 120, autoApplyDefaultTrail: false },
+    MONTH:  { rangeType: 'YEAR',  rangeValue: 10, defaultTrailLength: 10, maxTrailLength: 120, autoApplyDefaultTrail: false },
+  },
+  replayDefaults: {
+    restoreLastReplayDate: true,
+    rememberLastTrailLength: true,
+    rememberPlaybackSpeed: true,
+  },
+};
+
 export interface ChartSettingsState {
   // Benchmark
   benchmark: string;
@@ -26,6 +61,9 @@ export interface ChartSettingsState {
   watchlistOnlyResampling: boolean;
   backgroundSnapshotRefresh: boolean;
 
+  // Trail Replay config (from bootstrap, persisted via PATCH)
+  trailReplayConfig: TrailReplayConfig;
+
   // Hydration guard
   hydrated: boolean;
 
@@ -44,7 +82,9 @@ export interface ChartSettingsState {
   setMinimalWindowResampling: (v: boolean) => void;
   setWatchlistOnlyResampling: (v: boolean) => void;
   setBackgroundSnapshotRefresh: (v: boolean) => void;
+  setTrailReplayConfig: (config: TrailReplayConfig) => void;
   resetDefaults: () => void;
+  applyState: (draft: Partial<ChartSettingsState>) => void;
   
   loadConfig: () => Promise<void>;
   saveConfig: () => void;
@@ -65,6 +105,7 @@ const DEFAULT_STATE = {
   minimalWindowResampling: false,
   watchlistOnlyResampling: false,
   backgroundSnapshotRefresh: true,
+  trailReplayConfig: DEFAULT_TRAIL_REPLAY_CONFIG,
   hydrated: false,
 };
 
@@ -87,10 +128,14 @@ export const useChartSettingsStore = create<ChartSettingsState>((set, get) => ({
   setMinimalWindowResampling: (v) => { set({ minimalWindowResampling: v }); get().saveConfig(); },
   setWatchlistOnlyResampling: (v) => { set({ watchlistOnlyResampling: v }); get().saveConfig(); },
   setBackgroundSnapshotRefresh: (v) => { set({ backgroundSnapshotRefresh: v }); get().saveConfig(); },
-  
+  setTrailReplayConfig: (config) => { set({ trailReplayConfig: config }); get().saveConfig(); },
   resetDefaults: () => {
     set({ ...DEFAULT_STATE, hydrated: true });
     get().saveConfig();
+  },
+
+  applyState: (draft) => {
+    set(draft);
   },
 
   loadConfig: async () => {
@@ -108,7 +153,8 @@ export const useChartSettingsStore = create<ChartSettingsState>((set, get) => ({
           minZoom: config.camera?.minInteractionZoom ?? DEFAULT_STATE.minZoom,
           maxZoom: config.camera?.maxZoom ?? DEFAULT_STATE.maxZoom,
           
-          hydrated: true
+          hydrated: true,
+          trailReplayConfig: config.trailReplay ?? DEFAULT_TRAIL_REPLAY_CONFIG,
         });
       }
     } catch (e) {
@@ -148,7 +194,8 @@ export const useChartSettingsStore = create<ChartSettingsState>((set, get) => ({
           hoverHighlight: true,
           selectionHighlight: true,
           tooltipEnabled: true
-        }
+        },
+        trailReplay: state.trailReplayConfig,
       };
       try {
         await updateSettingsConfig(config);

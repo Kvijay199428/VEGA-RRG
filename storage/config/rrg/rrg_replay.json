@@ -1,0 +1,35 @@
+{
+  "configVersion": 1,
+  "updatedAt": 0,
+  "ranges": {
+    "active": "1W",
+    "bookmarked": ["1W", "1M", "3M", "6M", "1Y", "MAX", "CUSTOM"]
+  },
+  "timeframes": {
+    "active": "5min",
+    "bookmarked": ["1min", "5min", "15min", "45min", "1h", "1d", "1w", "1mo"]
+  },
+  "trailLengths": {
+    "active": 5,
+    "bookmarked": [5, 10, 15, 20, 30]
+  },
+  "playback": {
+    "defaultSpeed": 1.0,
+    "defaultLoop": false,
+    "availableStates": ["STOPPED", "PLAYING", "PAUSED", "FINISHED"],
+    "availableSpeeds": [0.25, 0.5, 1.0, 2.0, 4.0, 8.0, 16.0]
+  },
+  "timeline": {
+    "showCursor": true,
+    "showTrail": true,
+    "snapToFrame": true,
+    "autoScroll": true,
+    "allowFrameScrubbing": true
+  },
+  "dataset": {
+    "autoWarmup": true,
+    "warmupExtraCandles": 0,
+    "preloadFrames": 300,
+    "cacheEnabled": true
+  }
+}

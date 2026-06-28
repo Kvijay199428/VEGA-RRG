@@ -1,8 +1,8 @@
 {
-  "version" : 1,
-  "updatedAt" : 1779645738403,
+  "version" : 0,
+  "updatedAt" : 0,
   "timeframes" : {
-    "active" : "45m",
+    "active" : "5min",
     "bookmarked" : [ "1min", "5min", "15min", "45min", "1h", "1d", "1w", "1mo" ]
   },
   "trailLengths" : {
@@ -11,6 +11,9 @@
   },
   "toggles" : {
     "normalized" : true,
-    "trailsEnabled" : true
+    "trailsEnabled" : true,
+    "intradayEnabled" : false,
+    "liveStreamingEnabled" : false,
+    "replayModeEnabled" : true
   }
 }

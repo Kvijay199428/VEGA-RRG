@@ -24,65 +24,72 @@ public class SnapshotBuildPipeline {
 
     public RrgRuntimeConfigurationSnapshot build(
             SettingsConfig rawSettings,
-            CommandBarConfig rawCommandBar,
+            RrgPreferences rawPreferences,
             WatchlistConfig rawWatchlist,
             TimeframesConfig rawTimeframes,
             CachePolicyConfig rawCachePolicy,
-            FeatureFlagsConfig rawFeatureFlags) {
+            FeatureFlagsConfig rawFeatureFlags,
+            ReplayConfig rawReplayConfig) {
         
         long generationId = generationCounter.incrementAndGet();
 
         // Stage 2: Migrate
         SettingsConfig migratedSettings = migrationService.migrate(rawSettings);
-        CommandBarConfig migratedCommandBar = migrationService.migrate(rawCommandBar);
+        RrgPreferences migratedPreferences = migrationService.migrate(rawPreferences);
         WatchlistConfig migratedWatchlist = migrationService.migrate(rawWatchlist);
         TimeframesConfig migratedTimeframes = migrationService.migrate(rawTimeframes);
         CachePolicyConfig migratedCachePolicy = migrationService.migrate(rawCachePolicy);
         FeatureFlagsConfig migratedFeatureFlags = migrationService.migrate(rawFeatureFlags);
+        ReplayConfig migratedReplayConfig = migrationService.migrate(rawReplayConfig);
 
         // Stage 3 & 4: Validate & Normalize
         SettingsConfig validSettings = validator.validate(migratedSettings);
-        CommandBarConfig validCommandBar = validator.validate(migratedCommandBar);
+        RrgPreferences validPreferences = validator.validate(migratedPreferences);
         WatchlistConfig validWatchlist = validator.validate(migratedWatchlist);
         TimeframesConfig validTimeframes = validator.validate(migratedTimeframes); // Handle inheritance here
         CachePolicyConfig validCachePolicy = validator.validate(migratedCachePolicy);
         FeatureFlagsConfig validFeatureFlags = validator.validate(migratedFeatureFlags);
+        ReplayConfig validReplayConfig = validator.validate(migratedReplayConfig);
 
         // Stage 5: Hash
         String settingsHash = hasher.hash(validSettings);
-        String commandBarHash = hasher.hash(validCommandBar);
+        String preferencesHash = hasher.hash(validPreferences);
         String watchlistHash = hasher.hash(validWatchlist);
         String timeframesHash = hasher.hash(validTimeframes);
         String cachePolicyHash = hasher.hash(validCachePolicy);
         String featureFlagsHash = hasher.hash(validFeatureFlags);
+        String replayHash = hasher.hash(validReplayConfig);
 
         String globalHash = hasher.hash(Map.of(
                 "settings", settingsHash,
-                "commandBar", commandBarHash,
+                "preferences", preferencesHash,
                 "watchlist", watchlistHash,
                 "timeframes", timeframesHash,
                 "cachePolicy", cachePolicyHash,
-                "featureFlags", featureFlagsHash
+                "featureFlags", featureFlagsHash,
+                "replay", replayHash
         ));
 
         // Stage 6: Finalize (Immutable Snapshot)
         return new RrgRuntimeConfigurationSnapshot(
                 validSettings,
-                validCommandBar,
+                validPreferences,
                 validWatchlist,
                 validTimeframes,
                 validCachePolicy,
                 validFeatureFlags,
+                validReplayConfig,
                 1, // configVersion
                 globalHash,
                 generationId,
                 System.currentTimeMillis(),
                 settingsHash,
-                commandBarHash,
+                preferencesHash,
                 watchlistHash,
                 timeframesHash,
                 cachePolicyHash,
-                featureFlagsHash
+                featureFlagsHash,
+                replayHash
         );
     }
 }

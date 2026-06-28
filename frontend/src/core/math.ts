@@ -4,7 +4,7 @@ export function cleanSectorName(symbol: string): string {
   if (!symbol) return '';
   let name = symbol.replace(/_/g, ' ');
   name = name.replace(/^NSE\s*INDEX\s*/i, '');
-  name = name.replace(/^NIFTY\s*/i, '');
+  // name = name.replace(/^NIFTY\s*/i, '');
   return name.trim();
 }
 

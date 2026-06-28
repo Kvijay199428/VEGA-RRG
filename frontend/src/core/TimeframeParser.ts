@@ -15,6 +15,7 @@ export interface ParsedTimeframe {
   unit: TimeUnit;
   canonical: string;
   displayLabel: string;
+  minutes: number;
   baseResolutionMinutes: number;
   baseCandleMultiplier: number;
   intraday: boolean;
@@ -59,6 +60,24 @@ const UNIT_DISPLAY: Record<TimeUnit, string> = {
   [TimeUnit.MONTH]: 'Month',
   [TimeUnit.YEAR]: 'Year',
 };
+
+export const UNIT_MS: Record<TimeUnit, number> = {
+  [TimeUnit.MINUTE]: 60 * 1000,
+  [TimeUnit.HOUR]: 60 * 60 * 1000,
+  [TimeUnit.DAY]: 24 * 60 * 60 * 1000,
+  [TimeUnit.WEEK]: 7 * 24 * 60 * 60 * 1000,
+  [TimeUnit.MONTH]: 30 * 24 * 60 * 60 * 1000,
+  [TimeUnit.YEAR]: 365 * 24 * 60 * 60 * 1000,
+};
+
+export function getTimeframeMs(tf: string): number {
+  try {
+    const parsed = parseTimeframe(tf);
+    return parsed.multiplier * UNIT_MS[parsed.unit];
+  } catch (e) {
+    return 0;
+  }
+}
 
 export function parseTimeframe(raw: string): ParsedTimeframe {
   const match = raw.toLowerCase().match(/^(\d+)([a-z]+)$/);
@@ -110,6 +129,7 @@ export function parseTimeframe(raw: string): ParsedTimeframe {
   else timeframeScaleClass = 'macro';
 
   const sortWeight = SORT_WEIGHTS[unit] * multiplier;
+  const minutes = (UNIT_MS[unit] * multiplier) / 60000;
 
   return {
     raw,
@@ -117,6 +137,7 @@ export function parseTimeframe(raw: string): ParsedTimeframe {
     unit,
     canonical,
     displayLabel,
+    minutes,
     baseResolutionMinutes,
     baseCandleMultiplier,
     intraday,

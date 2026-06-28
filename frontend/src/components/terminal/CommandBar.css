@@ -29,39 +29,140 @@
   border-color: var(--accent-orange, #ff6b00);
 }
 
+.command-bar__selector {
+  background-color: var(--bg-input, #000);
+  color: var(--text-primary, #eee);
+  border: 1px solid var(--border-secondary, #444);
+  padding: 2px 8px;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.command-bar__selector:hover {
+  border-color: var(--accent-orange, #ff6b00);
+}
+
+.menu-popup {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e1e1e;
+  border: 1px solid #333;
+  margin-top: 4px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.8);
+  z-index: 1000;
+  min-width: 180px;
+  border-radius: 4px;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-section {
+  font-size: 10px;
+  color: #888;
+  padding: 4px 12px;
+  text-transform: uppercase;
+  margin-top: 4px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 4px;
+}
+
+.menu-item {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: #ccc;
+  gap: 12px;
+}
+
+.menu-item:hover {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.menu-item.active {
+  color: #ff6b00;
+  background: rgba(255,107,0,0.1);
+}
+
+.menu-item-label {
+  flex: 1;
+}
+
+.menu-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.menu-icon-btn {
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-icon-btn:hover {
+  color: #fff;
+}
+
+.menu-icon-btn.favorite.active {
+  color: #ffb800;
+}
+
+.menu-add-custom {
+  padding: 8px 12px;
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid #333;
+  margin-bottom: 4px;
+}
+
+.menu-add-custom input {
+  width: 50px;
+  background: #111;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 2px 4px;
+}
+
+.menu-add-custom select {
+  flex: 1;
+  background: #111;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.menu-add-btn {
+  background: #333;
+  border: 1px solid #444;
+  color: #fff;
+  cursor: pointer;
+  padding: 2px 8px;
+}
+
+.menu-add-btn:hover {
+  background: #444;
+}
+
 .command-bar__group {
   display: flex;
   align-items: center;
   border: 1px solid var(--border-secondary, #444);
-}
-
-.command-bar__segment-btn {
-  background-color: var(--bg-panel, #2a2a2a);
-  color: var(--text-secondary, #aaa);
-  border: none;
-  border-right: 1px solid var(--border-secondary, #444);
-  padding: 4px 10px;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  outline: none;
-  border-radius: var(--radius-none, 0);
-  border-bottom: 2px solid transparent;
-}
-
-.command-bar__segment-btn:last-child {
-  border-right: none;
-}
-
-.command-bar__segment-btn:hover {
-  background-color: var(--bg-hover, #333);
-  color: var(--text-primary, #eee);
-}
-
-.command-bar__segment-btn--active {
-  color: var(--text-primary, #eee);
-  border-bottom: 2px solid var(--accent-orange, #ff6b00);
-  background-color: var(--bg-active, #222);
 }
 
 .command-bar__toggle {

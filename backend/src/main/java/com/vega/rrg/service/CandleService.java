@@ -31,17 +31,15 @@ public class CandleService {
     }
 
     public Optional<ProtoCandleFile> loadRecentCandles(String sector, ParsedTimeframe parsedTf, int requiredRawCandles) {
-        return aggregationService.getAggregatedWindow(sector, parsedTf, requiredRawCandles, () -> loadBaseCandlesWindowed(sector, parsedTf, requiredRawCandles));
-    }
-
-    private Optional<ProtoCandleFile> loadBaseCandlesWindowed(String sector, ParsedTimeframe parsedTf, int requiredRawCandles) {
-        Optional<ProtoCandleFile> baseOpt = loadBaseCandles(sector, parsedTf);
-        if (baseOpt.isEmpty()) return Optional.empty();
+        Optional<ProtoCandleFile> fullOpt = loadCandles(sector, parsedTf);
+        if (fullOpt.isEmpty()) return Optional.empty();
         
-        ProtoCandleFile parsed = baseOpt.get();
+        ProtoCandleFile parsed = fullOpt.get();
         java.util.List<ProtoCandle> candles = parsed.getCandlesList();
         
-        int start = Math.max(0, candles.size() - requiredRawCandles);
+        if (candles.size() <= requiredRawCandles) return fullOpt;
+
+        int start = candles.size() - requiredRawCandles;
         java.util.List<ProtoCandle> window = new java.util.ArrayList<>(candles.subList(start, candles.size()));
         
         return Optional.of(ProtoCandleFile.newBuilder(parsed)
@@ -50,8 +48,9 @@ public class CandleService {
                 .build());
     }
 
-    private Optional<ProtoCandleFile> loadBaseCandles(String sector, ParsedTimeframe parsedTf) {
-        Path path = storageRoot.resolve(sector).resolve(getBaseFile(parsedTf));
+    private Optional<ProtoCandleFile> loadBaseCandles(String symbol, ParsedTimeframe parsedTf) {
+        Path path = storageRoot.resolve(symbol).resolve(getBaseFile(parsedTf));
+        System.out.println("CANDLE_LOOKUP: symbol=" + symbol + " timeframe=" + parsedTf.getRaw() + " resolvedFile=" + path.toAbsolutePath());
         try (FileInputStream input = new FileInputStream(path.toFile())) {
             return Optional.of(ProtoCandleFile.parseFrom(input));
         } catch (IOException e) {

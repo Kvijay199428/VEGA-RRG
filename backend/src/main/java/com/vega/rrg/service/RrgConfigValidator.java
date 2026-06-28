@@ -1,14 +1,17 @@
 package com.vega.rrg.service;
 
-import com.vega.rrg.model.config.CommandBarConfig;
+import com.vega.rrg.model.config.RrgPreferences;
 import com.vega.rrg.model.config.SettingsConfig;
 import com.vega.rrg.model.config.WatchlistConfig;
 import com.vega.rrg.model.config.TimeframesConfig;
 import com.vega.rrg.model.config.CachePolicyConfig;
 import com.vega.rrg.model.config.FeatureFlagsConfig;
+import com.vega.rrg.model.config.ReplayConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.LinkedHashSet;
 import java.util.stream.Collectors;
 
@@ -68,6 +71,30 @@ public class RrgConfigValidator {
             }
         }
 
+        // Validate trailReplay — clamp defaultTrailLength to [1, maxTrailLength]
+        SettingsConfig.TrailReplayConfig newReplay = config.trailReplay();
+        if (newReplay != null && newReplay.timeframeDateRanges() != null) {
+            var validatedRanges = new java.util.LinkedHashMap<String, SettingsConfig.TimeframeReplayConfig>();
+            for (Map.Entry<String, SettingsConfig.TimeframeReplayConfig> entry : newReplay.timeframeDateRanges().entrySet()) {
+                SettingsConfig.TimeframeReplayConfig tf = entry.getValue();
+                if (tf == null) continue;
+                int maxTrail = Math.max(1, tf.maxTrailLength());
+                int defTrail = Math.min(Math.max(1, tf.defaultTrailLength()), maxTrail);
+                int rangeVal = Math.max(1, tf.rangeValue());
+                validatedRanges.put(entry.getKey(),
+                    new SettingsConfig.TimeframeReplayConfig(
+                        tf.rangeType(),
+                        rangeVal,
+                        defTrail,
+                        maxTrail,
+                        tf.autoApplyDefaultTrail()));
+            }
+            newReplay = new SettingsConfig.TrailReplayConfig(
+                newReplay.enabled(),
+                validatedRanges,
+                newReplay.replayDefaults() != null ? newReplay.replayDefaults() : new SettingsConfig.ReplayDefaults());
+        }
+
         return new SettingsConfig(
                 config.version(),
                 config.updatedAt(),
@@ -75,33 +102,49 @@ public class RrgConfigValidator {
                 config.rendering(),
                 newCamera,
                 config.interaction(),
-                config.windowing()
-        );
+                config.windowing(),
+                newReplay);
     }
 
-    public CommandBarConfig validate(CommandBarConfig config) {
-        if (config == null) return new CommandBarConfig();
+    public RrgPreferences validate(RrgPreferences config) {
+        if (config == null) return new RrgPreferences();
 
-        CommandBarConfig.Timeframes newTf = config.timeframes();
+        List<RrgPreferences.TimeframePreference> newTf = config.timeframes();
         if (newTf != null) {
-            var unique = new LinkedHashSet<>(newTf.bookmarked());
-            newTf = new CommandBarConfig.Timeframes(newTf.active(), new java.util.ArrayList<>(unique));
+            var uniqueItems = new java.util.LinkedHashMap<String, RrgPreferences.TimeframePreference>();
+            for (var item : newTf) {
+                if (item.minutes() >= 1 && item.minutes() <= 43200) {
+                    uniqueItems.putIfAbsent(item.id(), new RrgPreferences.TimeframePreference(
+                        item.id(), item.label(), item.minutes(), item.bookmarked(),
+                        true, item.system(), item.createdAt()
+                    ));
+                }
+            }
+            newTf = new java.util.ArrayList<>(uniqueItems.values());
         }
 
-        CommandBarConfig.TrailLengths newTl = config.trailLengths();
+        List<RrgPreferences.TrailPreference> newTl = config.trails();
         if (newTl != null) {
-            var unique = new LinkedHashSet<>(newTl.bookmarked());
-            unique.removeIf(val -> val < 0);
-            int active = newTl.active() < 0 ? 10 : newTl.active();
-            newTl = new CommandBarConfig.TrailLengths(active, new java.util.ArrayList<>(unique));
+            var uniqueItems = new java.util.LinkedHashMap<Integer, RrgPreferences.TrailPreference>();
+            for (var item : newTl) {
+                if (item.value() > 0) {
+                    uniqueItems.putIfAbsent(item.value(), item);
+                }
+            }
+            newTl = new java.util.ArrayList<>(uniqueItems.values());
         }
 
-        return new CommandBarConfig(
+        int activeTrailLength = config.activeTrailLength() < 0 ? 10 : config.activeTrailLength();
+
+        return new RrgPreferences(
                 config.version(),
                 config.updatedAt(),
+                config.activeTimeframe(),
+                activeTrailLength,
                 newTf,
                 newTl,
-                config.toggles()
+                config.toggles(),
+                config.replay()
         );
     }
 
@@ -136,5 +179,36 @@ public class RrgConfigValidator {
     public FeatureFlagsConfig validate(FeatureFlagsConfig config) {
         if (config == null) return new FeatureFlagsConfig();
         return config;
+    }
+
+    public ReplayConfig validate(ReplayConfig config) {
+        if (config == null) return new ReplayConfig();
+        
+        String activeRange = config.ranges().bookmarked().contains(config.ranges().active()) ? config.ranges().active() : config.ranges().bookmarked().get(0);
+        ReplayConfig.RangeConfig ranges = new ReplayConfig.RangeConfig(activeRange, config.ranges().bookmarked());
+
+        String activeTimeframe = config.timeframes().bookmarked().contains(config.timeframes().active()) ? config.timeframes().active() : config.timeframes().bookmarked().get(0);
+        ReplayConfig.TimeframeConfig timeframes = new ReplayConfig.TimeframeConfig(activeTimeframe, config.timeframes().bookmarked());
+
+        int activeTrailLength = config.trailLengths().bookmarked().contains(config.trailLengths().active()) ? config.trailLengths().active() : config.trailLengths().bookmarked().get(0);
+        ReplayConfig.TrailLengthConfig trailLengths = new ReplayConfig.TrailLengthConfig(activeTrailLength, config.trailLengths().bookmarked());
+
+        double defaultSpeed = config.playback().availableSpeeds().contains(config.playback().defaultSpeed()) ? config.playback().defaultSpeed() : 1.0;
+        ReplayConfig.PlaybackConfig playback = new ReplayConfig.PlaybackConfig(defaultSpeed, config.playback().defaultLoop(), config.playback().availableStates(), config.playback().availableSpeeds());
+
+        int preloadFrames = Math.max(0, config.dataset().preloadFrames());
+        int warmupExtraCandles = Math.max(0, config.dataset().warmupExtraCandles());
+        ReplayConfig.DatasetConfig dataset = new ReplayConfig.DatasetConfig(config.dataset().autoWarmup(), warmupExtraCandles, preloadFrames, config.dataset().cacheEnabled());
+
+        return new ReplayConfig(
+            config.configVersion(),
+            config.updatedAt(),
+            ranges,
+            timeframes,
+            trailLengths,
+            playback,
+            config.timeline(),
+            dataset
+        );
     }
 }

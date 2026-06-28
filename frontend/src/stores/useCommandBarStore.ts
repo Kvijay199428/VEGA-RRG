@@ -1,40 +1,93 @@
 import { create } from 'zustand';
 import { parseTimeframe } from '../core/TimeframeParser';
-import { fetchCommandBarConfig, updateCommandBarConfig } from '../services/api';
+import { fetchPreferences, updatePreferences } from '../services/api';
 
 export type TimeframeToken = string;
+
+export interface TimeframeItem {
+  id: string;
+  label: string;
+  minutes: number;
+  bookmarked: boolean;
+  supported: boolean;
+  system: boolean;
+  createdAt?: string;
+}
+
+export interface TrailItem {
+  value: number;
+  bookmarked: boolean;
+  system: boolean;
+  recommendedReplayRange?: string | null;
+  createdAt?: string;
+}
 
 export interface CommandBarState {
   timeframe: TimeframeToken;
   trailLength: number;
-  bookmarkedTrailLengths: number[];
-  bookmarkedTimeframes: string[];
+  timeframeItems: TimeframeItem[];
+  trailItems: TrailItem[];
   recentTimeframes: string[];
   normalized: boolean;
   showTrails: boolean;
+
+  // Live mode toggles
+  intradayEnabled: boolean;
+  liveStreamingEnabled: boolean;
+  replayModeEnabled: boolean;
+
+  // Replay transport controls
+  playState: 'playing' | 'paused';
+  replaySpeed: 1 | 2 | 5 | 10;
 
   hydrated: boolean;
 
   setTimeframe: (t: TimeframeToken) => void;
   setTrailLength: (l: number) => void;
-  setBookmarkedTrailLengths: (l: number[]) => void;
-  setBookmarkedTimeframes: (tfs: string[]) => void;
+  setTimeframeItems: (items: TimeframeItem[]) => void;
+  setTrailItems: (items: TrailItem[]) => void;
   addRecentTimeframe: (tf: string) => void;
   setNormalized: (v: boolean) => void;
   setShowTrails: (v: boolean) => void;
+  setIntradayEnabled: (v: boolean) => void;
+  setLiveStreamingEnabled: (v: boolean) => void;
+  setReplayModeEnabled: (v: boolean) => void;
+  setPlayState: (s: 'playing' | 'paused') => void;
+  setReplaySpeed: (speed: 1 | 2 | 5 | 10) => void;
+  applyState: (draft: Partial<CommandBarState>) => void;
 
   loadConfig: () => Promise<void>;
   saveConfig: () => void;
 }
 
 const DEFAULT_STATE = {
-  timeframe: '15min',
-  trailLength: 10,
-  bookmarkedTrailLengths: [5, 10, 15, 20, 30],
-  bookmarkedTimeframes: ['1min', '5min', '15min', '45min', '1h', '1d', '1w', '1mo'],
+  timeframe: '5min',
+  trailLength: 5,
+  timeframeItems: [
+    { id: '1min', label: '1 MIN', minutes: 1, bookmarked: true, supported: true, system: true },
+    { id: '5min', label: '5 MIN', minutes: 5, bookmarked: true, supported: true, system: true },
+    { id: '15min', label: '15 MIN', minutes: 15, bookmarked: true, supported: true, system: true },
+    { id: '45min', label: '45 MIN', minutes: 45, bookmarked: true, supported: true, system: true },
+    { id: '1h', label: '1 HOUR', minutes: 60, bookmarked: true, supported: true, system: true },
+    { id: '1d', label: '1 DAY', minutes: 1440, bookmarked: true, supported: true, system: true },
+    { id: '1w', label: '1 WEEK', minutes: 10080, bookmarked: true, supported: true, system: true },
+    { id: '1mo', label: '1 MONTH', minutes: 43200, bookmarked: true, supported: true, system: true }
+  ],
+  trailItems: [
+    { value: 5, bookmarked: true, system: true },
+    { value: 10, bookmarked: true, system: true },
+    { value: 15, bookmarked: true, system: true },
+    { value: 20, bookmarked: true, system: true },
+    { value: 30, bookmarked: true, system: true }
+  ],
   recentTimeframes: [],
   normalized: true,
   showTrails: true,
+  intradayEnabled: false,
+  liveStreamingEnabled: false,
+  replayModeEnabled: false,
+  playState: 'paused' as const,
+  replaySpeed: 1 as const,
   hydrated: false,
 };
 
@@ -57,17 +110,12 @@ export const useCommandBarStore = create<CommandBarState>((set, get) => ({
     set({ trailLength: l });
     get().saveConfig();
   },
-  setBookmarkedTrailLengths: (l) => {
-    set({ bookmarkedTrailLengths: l });
+  setTimeframeItems: (items) => {
+    set({ timeframeItems: items });
     get().saveConfig();
   },
-  setBookmarkedTimeframes: (tfs) => {
-    const sorted = tfs.map(t => {
-      try { return parseTimeframe(t); } catch { return null; }
-    }).filter(Boolean)
-      .sort((a, b) => a!.sortWeight - b!.sortWeight)
-      .map(p => p!.canonical);
-    set({ bookmarkedTimeframes: Array.from(new Set(sorted)) });
+  setTrailItems: (items) => {
+    set({ trailItems: items });
     get().saveConfig();
   },
   addRecentTimeframe: (tf) => {
@@ -82,18 +130,36 @@ export const useCommandBarStore = create<CommandBarState>((set, get) => ({
     set({ showTrails: v });
     get().saveConfig();
   },
+  setIntradayEnabled: (v) => {
+    set({ intradayEnabled: v });
+    get().saveConfig();
+  },
+  setLiveStreamingEnabled: (v) => {
+    set({ liveStreamingEnabled: v });
+    get().saveConfig();
+  },
+  setReplayModeEnabled: (v) => {
+    set({ replayModeEnabled: v, playState: 'paused' });
+    get().saveConfig();
+  },
+  setPlayState: (s) => set({ playState: s }),
+  setReplaySpeed: (speed) => set({ replaySpeed: speed }),
+  applyState: (draft) => set(draft),
 
   loadConfig: async () => {
     try {
-      const config = await fetchCommandBarConfig();
+      const config = await fetchPreferences();
       if (config) {
         set({
-          timeframe: config.timeframes?.active || DEFAULT_STATE.timeframe,
-          bookmarkedTimeframes: config.timeframes?.bookmarked || DEFAULT_STATE.bookmarkedTimeframes,
-          trailLength: config.trailLengths?.active || DEFAULT_STATE.trailLength,
-          bookmarkedTrailLengths: config.trailLengths?.bookmarked || DEFAULT_STATE.bookmarkedTrailLengths,
+          timeframe: config.activeTimeframe || DEFAULT_STATE.timeframe,
+          timeframeItems: config.timeframes || DEFAULT_STATE.timeframeItems,
+          trailLength: config.activeTrailLength || DEFAULT_STATE.trailLength,
+          trailItems: config.trails || DEFAULT_STATE.trailItems,
           normalized: config.toggles?.normalized ?? DEFAULT_STATE.normalized,
           showTrails: config.toggles?.trailsEnabled ?? DEFAULT_STATE.showTrails,
+          intradayEnabled: config.toggles?.intradayEnabled ?? DEFAULT_STATE.intradayEnabled,
+          liveStreamingEnabled: config.toggles?.liveStreamingEnabled ?? DEFAULT_STATE.liveStreamingEnabled,
+          replayModeEnabled: config.toggles?.replayModeEnabled ?? DEFAULT_STATE.replayModeEnabled,
           hydrated: true
         });
       }
@@ -108,24 +174,24 @@ export const useCommandBarStore = create<CommandBarState>((set, get) => ({
     saveTimeout = setTimeout(async () => {
       const state = get();
       const config = {
-        timeframes: {
-          active: state.timeframe,
-          bookmarked: state.bookmarkedTimeframes
-        },
-        trailLengths: {
-          active: state.trailLength,
-          bookmarked: state.bookmarkedTrailLengths
-        },
+        version: 1,
+        activeTimeframe: state.timeframe,
+        activeTrailLength: state.trailLength,
+        timeframes: state.timeframeItems,
+        trails: state.trailItems,
         toggles: {
           normalized: state.normalized,
-          trailsEnabled: state.showTrails
+          trailsEnabled: state.showTrails,
+          intradayEnabled: state.intradayEnabled,
+          liveStreamingEnabled: state.liveStreamingEnabled,
+          replayModeEnabled: state.replayModeEnabled
         }
       };
       try {
-        await updateCommandBarConfig(config);
+        await updatePreferences(config);
       } catch (e) {
         console.error('Failed to save command bar config', e);
       }
-    }, 500); // 500ms debounce
+    }, 500);
   }
 }));

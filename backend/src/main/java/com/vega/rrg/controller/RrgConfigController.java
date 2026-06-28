@@ -1,6 +1,6 @@
 package com.vega.rrg.controller;
 
-import com.vega.rrg.model.config.CommandBarConfig;
+import com.vega.rrg.model.config.RrgPreferences;
 import com.vega.rrg.model.config.SettingsConfig;
 import com.vega.rrg.model.config.WatchlistConfig;
 import com.vega.rrg.model.config.RrgRuntimeConfigurationSnapshot;
@@ -58,7 +58,8 @@ public class RrgConfigController {
                 "watchlist", true,
                 "timeframes", true,
                 "cachePolicy", true,
-                "commandBar", true
+                "preferences", true,
+                "replay", true
             )
         ));
     }
@@ -88,29 +89,29 @@ public class RrgConfigController {
                 .body(snapshot.settingsConfig());
     }
 
-    @GetMapping("/commandbar")
-    public ResponseEntity<CommandBarConfig> getCommandBar(WebRequest request) {
+    @GetMapping("/preferences")
+    public ResponseEntity<RrgPreferences> getPreferences(WebRequest request) {
         RrgRuntimeConfigurationSnapshot snapshot = configService.getRuntimeSnapshot();
-        if (request.checkNotModified(snapshot.commandBarHash())) {
+        if (request.checkNotModified(snapshot.preferencesHash())) {
             return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
         }
         return ResponseEntity.ok()
-                .eTag("\"" + snapshot.commandBarHash() + "\"")
-                .body(snapshot.commandBarConfig());
+                .eTag("\"" + snapshot.preferencesHash() + "\"")
+                .body(snapshot.preferencesConfig());
     }
 
-    @PatchMapping("/commandbar")
-    public ResponseEntity<CommandBarConfig> updateCommandBar(
+    @PatchMapping("/preferences")
+    public ResponseEntity<RrgPreferences> updatePreferences(
             @RequestHeader(value = "If-Match", required = false) String ifMatch,
-            @RequestBody CommandBarConfig config) {
+            @RequestBody RrgPreferences config) {
         
         String expectedHash = ifMatch != null ? ifMatch.replace("\"", "") : null;
-        configService.updateCommandBarConfig(config, expectedHash);
+        configService.updatePreferences(config, expectedHash);
         
         RrgRuntimeConfigurationSnapshot snapshot = configService.getRuntimeSnapshot();
         return ResponseEntity.ok()
-                .eTag("\"" + snapshot.commandBarHash() + "\"")
-                .body(snapshot.commandBarConfig());
+                .eTag("\"" + snapshot.preferencesHash() + "\"")
+                .body(snapshot.preferencesConfig());
     }
 
     @GetMapping("/watchlist")
@@ -136,5 +137,16 @@ public class RrgConfigController {
         return ResponseEntity.ok()
                 .eTag("\"" + snapshot.watchlistHash() + "\"")
                 .body(snapshot.watchlistConfig());
+    }
+
+    @GetMapping("/replay")
+    public ResponseEntity<com.vega.rrg.model.config.ReplayConfig> getReplay(WebRequest request) {
+        RrgRuntimeConfigurationSnapshot snapshot = configService.getRuntimeSnapshot();
+        if (request.checkNotModified(snapshot.replayHash())) {
+            return ResponseEntity.status(HttpStatus.NOT_MODIFIED).build();
+        }
+        return ResponseEntity.ok()
+                .eTag("\"" + snapshot.replayHash() + "\"")
+                .body(snapshot.replayConfig());
     }
 }

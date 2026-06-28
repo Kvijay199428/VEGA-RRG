@@ -2,11 +2,12 @@ package com.vega.rrg.model.config;
 
 public record RrgRuntimeConfigurationSnapshot(
     SettingsConfig settingsConfig,
-    CommandBarConfig commandBarConfig,
+    RrgPreferences preferencesConfig,
     WatchlistConfig watchlistConfig,
     TimeframesConfig timeframesConfig,
     CachePolicyConfig cachePolicyConfig,
     FeatureFlagsConfig featureFlagsConfig,
+    ReplayConfig replayConfig,
 
     int configVersion,
     String configHash,
@@ -14,9 +15,10 @@ public record RrgRuntimeConfigurationSnapshot(
     long loadedAt,
     
     String settingsHash,
-    String commandBarHash,
+    String preferencesHash,
     String watchlistHash,
     String timeframesHash,
     String cachePolicyHash,
-    String featureFlagsHash
+    String featureFlagsHash,
+    String replayHash
 ) {}

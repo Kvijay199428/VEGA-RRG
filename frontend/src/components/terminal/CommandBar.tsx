@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef, memo } from 'react';
 import { cleanSectorName } from '../../core/math';
 import { useRrgStore } from '../../stores/useRrgStore';
 import { useCommandBarStore } from '../../stores/useCommandBarStore';
+import type { TimeframeItem, TrailItem } from '../../stores/useCommandBarStore';
 import { useChartSettingsStore } from '../../stores/useChartSettingsStore';
+import { useReplayStore } from '../../stores/useReplayStore';
 import { SettingsModal } from '../settings/SettingsModal';
 import { parseTimeframe, TimeUnit } from '../../core/TimeframeParser';
 import './CommandBar.css';
@@ -11,15 +13,29 @@ const CommandBar: React.FC = memo(() => {
   const {
     timeframe, setTimeframe,
     trailLength, setTrailLength,
-    bookmarkedTrailLengths, setBookmarkedTrailLengths,
-    bookmarkedTimeframes, setBookmarkedTimeframes,
-    recentTimeframes,
+    timeframeItems, setTimeframeItems,
+    trailItems, setTrailItems,
     showTrails, setShowTrails,
     normalized, setNormalized,
+    intradayEnabled, setIntradayEnabled,
+    liveStreamingEnabled, setLiveStreamingEnabled,
+    replayModeEnabled, setReplayModeEnabled,
   } = useCommandBarStore();
 
   const { benchmark, setBenchmark } = useChartSettingsStore();
-  const { sectors, isPlaying, setIsPlaying } = useRrgStore();
+  const { replayDefaultApplied, setReplayDefaultApplied, sectors } = useRrgStore();
+  const { setPlaybackState, setReplayCursor } = useReplayStore();
+
+  // Reset transient replay state when replay mode is toggled off.
+  useEffect(() => {
+    if (!replayModeEnabled) {
+      setReplayCursor(null);
+      setPlaybackState('STOPPED');
+      setReplayDefaultApplied(false);
+    } else if (!replayDefaultApplied) {
+      setReplayDefaultApplied(true);
+    }
+  }, [replayModeEnabled, replayDefaultApplied, setPlaybackState, setReplayCursor, setReplayDefaultApplied]);
 
   const [time, setTime] = useState<string>('');
   const [settingsOpen, setSettingsOpen] = useState(false);
@@ -100,6 +116,7 @@ const CommandBar: React.FC = memo(() => {
 
 
   return (
+    <>
     <div className="command-bar">
       <select 
         className="command-bar__benchmark" 
@@ -112,174 +129,199 @@ const CommandBar: React.FC = memo(() => {
       </select>
 
       <div className="command-bar__group command-bar__timeframe">
-        {bookmarkedTimeframes.map(tfValue => {
-          let label = tfValue;
-          let isActive = timeframe === tfValue;
-          try {
-            label = parseTimeframe(tfValue).displayLabel.toUpperCase();
-            isActive = parseTimeframe(timeframe).canonical === parseTimeframe(tfValue).canonical;
-          } catch {}
-          return (
-            <button
-              key={tfValue}
-              className={`command-bar__segment-btn ${isActive ? 'command-bar__segment-btn--active' : ''}`}
-              onClick={() => setTimeframe(tfValue)}
-              onContextMenu={(e) => {
-                e.preventDefault();
-                if (bookmarkedTimeframes.length > 1) {
-                  setBookmarkedTimeframes(bookmarkedTimeframes.filter(x => x !== tfValue));
-                }
-              }}
-              title="Right-click to remove bookmark"
-            >
-              {label}
-            </button>
-          );
-        })}
-        <div ref={tfPopupRef} style={{ position: 'relative', display: 'flex' }}>
-          <button
-            className="command-bar__segment-btn"
+        <div ref={tfPopupRef} style={{ position: 'relative' }}>
+          <button 
+            className="command-bar__selector" 
             onClick={() => setCustomTfPopupOpen(!customTfPopupOpen)}
-            style={{ fontWeight: 'bold' }}
-            title="Add Custom Timeframe"
+            title="Select Timeframe"
           >
-            +
+            {timeframeItems.find(t => t.id === timeframe)?.label || timeframe} ▼
           </button>
+          
           {customTfPopupOpen && (
-            <div className="command-bar__popup" style={{
-              position: 'absolute', top: '100%', left: '0', 
-              background: '#111', border: '1px solid #333', 
-              padding: '8px', zIndex: 100, display: 'flex', gap: '4px',
-              marginTop: '4px', borderRadius: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-              flexDirection: 'column', width: '220px'
-            }}>
-              <div style={{ display: 'flex', gap: '4px' }}>
+            <div className="menu-popup">
+              <div className="menu-add-custom">
                 <input 
                   type="number" 
                   value={customTfNum} 
                   onChange={e => setCustomTfNum(parseInt(e.target.value) || 0)}
-                  style={{ width: '50px', background: '#222', color: '#fff', border: '1px solid #444', textAlign: 'center', borderRadius: '2px' }}
                   min={1}
                 />
                 <select 
                   value={customTfUnit} 
                   onChange={e => setCustomTfUnit(e.target.value as TimeUnit)}
-                  style={{ flex: 1, background: '#222', color: '#fff', border: '1px solid #444', borderRadius: '2px' }}
                 >
                   <option value={TimeUnit.MINUTE}>Minutes</option>
                   <option value={TimeUnit.HOUR}>Hours</option>
                   <option value={TimeUnit.DAY}>Days</option>
                   <option value={TimeUnit.WEEK}>Weeks</option>
                   <option value={TimeUnit.MONTH}>Months</option>
-                  <option value={TimeUnit.YEAR}>Years</option>
                 </select>
                 <button 
+                  className="menu-add-btn"
                   onClick={() => {
                     const raw = `${customTfNum}${customTfUnit}`;
                     try {
                       const parsed = parseTimeframe(raw);
-                      if (!bookmarkedTimeframes.includes(parsed.canonical)) {
-                        setBookmarkedTimeframes([...bookmarkedTimeframes, parsed.canonical]);
+                      const existing = timeframeItems.find(t => t.id === parsed.canonical);
+                      if (!existing) {
+                        const newItem: TimeframeItem = {
+                          id: parsed.canonical,
+                          label: parsed.displayLabel.toUpperCase(),
+                          minutes: parsed.minutes,
+                          bookmarked: false,
+                          system: false,
+                          supported: true,
+                          createdAt: new Date().toISOString()
+                        };
+                        setTimeframeItems([...timeframeItems, newItem]);
                       }
                       setTimeframe(parsed.canonical);
                       setCustomTfPopupOpen(false);
-                    } catch (e: any) {
-                      alert(e.message);
-                    }
+                    } catch (e: any) { alert(e.message); }
                   }}
-                  style={{ background: '#333', border: '1px solid #444', color: '#fff', cursor: 'pointer', padding: '2px 8px', borderRadius: '2px', fontSize: '10px' }}
                 >
                   ADD
                 </button>
               </div>
-              {recentTimeframes.length > 0 && (
-                <div style={{ marginTop: '8px', borderTop: '1px solid #333', paddingTop: '4px' }}>
-                  <div style={{ fontSize: '10px', color: '#888', marginBottom: '4px' }}>RECENT</div>
-                  <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap' }}>
-                    {recentTimeframes.map(rtf => (
-                      <button key={rtf} onClick={() => {
-                        setTimeframe(rtf);
-                        if (!bookmarkedTimeframes.includes(rtf)) setBookmarkedTimeframes([...bookmarkedTimeframes, rtf]);
-                        setCustomTfPopupOpen(false);
-                      }} style={{ background: '#222', border: '1px solid #444', color: '#ccc', fontSize: '10px', padding: '2px 4px', cursor: 'pointer', borderRadius: '2px' }}>
-                        {rtf}
-                      </button>
-                    ))}
+
+              {timeframeItems.some(t => t.bookmarked) && (
+                <>
+                  <div className="menu-section">Favorites</div>
+                  {timeframeItems.filter(t => t.bookmarked).sort((a,b)=>a.minutes-b.minutes).map(t => (
+                    <div key={t.id} className={`menu-item ${t.id === timeframe ? 'active' : ''}`} onClick={() => { setTimeframe(t.id); setCustomTfPopupOpen(false); }}>
+                      <div className="menu-item-label">{t.label}</div>
+                      <div className="menu-item-actions" onClick={e => e.stopPropagation()}>
+                        {!t.system && (
+                          <button className="menu-icon-btn" onClick={() => setTimeframeItems(timeframeItems.filter(i => i.id !== t.id))} title="Delete">🗑</button>
+                        )}
+                        <button className="menu-icon-btn favorite active" onClick={() => setTimeframeItems(timeframeItems.map(i => i.id === t.id ? { ...i, bookmarked: false } : i))} title="Remove Favorite">★</button>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              )}
+
+              <div className="menu-section">Standard</div>
+              {timeframeItems.filter(t => !t.bookmarked && t.system).sort((a,b)=>a.minutes-b.minutes).map(t => (
+                <div key={t.id} className={`menu-item ${t.id === timeframe ? 'active' : ''}`} onClick={() => { setTimeframe(t.id); setCustomTfPopupOpen(false); }}>
+                  <div className="menu-item-label">{t.label}</div>
+                  <div className="menu-item-actions" onClick={e => e.stopPropagation()}>
+                    <button className="menu-icon-btn favorite" onClick={() => setTimeframeItems(timeframeItems.map(i => i.id === t.id ? { ...i, bookmarked: true } : i))} title="Add Favorite">☆</button>
                   </div>
                 </div>
+              ))}
+
+              {timeframeItems.some(t => !t.system && !t.bookmarked) && (
+                <>
+                  <div className="menu-section">Custom</div>
+                  {timeframeItems.filter(t => !t.system && !t.bookmarked).sort((a,b)=>a.minutes-b.minutes).map(t => (
+                    <div key={t.id} className={`menu-item ${t.id === timeframe ? 'active' : ''}`} onClick={() => { setTimeframe(t.id); setCustomTfPopupOpen(false); }}>
+                      <div className="menu-item-label">{t.label}</div>
+                      <div className="menu-item-actions" onClick={e => e.stopPropagation()}>
+                        <button className="menu-icon-btn" onClick={() => setTimeframeItems(timeframeItems.filter(i => i.id !== t.id))} title="Delete">🗑</button>
+                        <button className="menu-icon-btn favorite" onClick={() => setTimeframeItems(timeframeItems.map(i => i.id === t.id ? { ...i, bookmarked: true } : i))} title="Add Favorite">☆</button>
+                      </div>
+                    </div>
+                  ))}
+                </>
               )}
             </div>
           )}
         </div>
       </div>
 
-      <div className="command-bar__group command-bar__range">
-        {bookmarkedTrailLengths.map(len => (
-          <button
-            key={len}
-            className={`command-bar__segment-btn ${trailLength === len ? 'command-bar__segment-btn--active' : ''}`}
-            onClick={() => setTrailLength?.(len)}
-            onContextMenu={(e) => {
-              e.preventDefault();
-              if (bookmarkedTrailLengths.length > 1) {
-                setBookmarkedTrailLengths(bookmarkedTrailLengths.filter(x => x !== len));
-              }
-            }}
-            title="Right-click to remove bookmark"
-          >
-            {len}
-          </button>
-        ))}
-        <div ref={popupRef} style={{ position: 'relative', display: 'flex' }}>
-          <button
-            className="command-bar__segment-btn"
-            onClick={() => setCustomTrailPopupOpen(!customTrailPopupOpen)}
-            style={{ fontWeight: 'bold' }}
-            title="Add Custom Trail"
-          >
-            +
-          </button>
-          {customTrailPopupOpen && (
-            <div className="command-bar__popup" style={{
-              position: 'absolute', top: '100%', left: '0', 
-              background: '#111', border: '1px solid #333', 
-              padding: '8px', zIndex: 100, display: 'flex', gap: '4px',
-              marginTop: '4px', borderRadius: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.5)'
-            }}>
-              <input 
-                type="number" 
-                value={customLen} 
-                onChange={e => setCustomLen(parseInt(e.target.value) || 0)}
-                style={{ width: '50px', background: '#222', color: '#fff', border: '1px solid #444', textAlign: 'center', borderRadius: '2px' }}
-                min={1}
-                max={500}
-              />
-              <button 
-                onClick={() => {
-                  if (customLen > 0) setTrailLength(customLen);
-                  setCustomTrailPopupOpen(false);
-                }}
-                style={{ background: '#333', border: '1px solid #444', color: '#fff', cursor: 'pointer', padding: '2px 8px', borderRadius: '2px', fontSize: '10px' }}
-              >
-                APPLY
-              </button>
-              <button 
-                onClick={() => {
-                  if (customLen > 0 && !bookmarkedTrailLengths.includes(customLen)) {
-                    setBookmarkedTrailLengths([...bookmarkedTrailLengths, customLen].sort((a,b)=>a-b));
-                    setTrailLength(customLen);
-                    setCustomTrailPopupOpen(false);
-                  }
-                }}
-                style={{ background: '#2c3e50', border: '1px solid #34495e', color: '#fff', cursor: 'pointer', padding: '2px 8px', fontSize: '10px', borderRadius: '2px' }}
-                title="Bookmark this length"
-              >
-                ★
-              </button>
-            </div>
-          )}
+      {!replayModeEnabled && (
+        <div className="command-bar__group command-bar__range">
+          <div ref={popupRef} style={{ position: 'relative' }}>
+            <button 
+              className="command-bar__selector" 
+              onClick={() => setCustomTrailPopupOpen(!customTrailPopupOpen)}
+              title="Select Trail Length"
+            >
+              {trailItems.find(t => t.value === trailLength)?.value || trailLength} ▼
+            </button>
+            
+            {customTrailPopupOpen && (
+              <div className="menu-popup">
+                <div className="menu-add-custom">
+                  <input 
+                    type="number" 
+                    value={customLen} 
+                    onChange={e => setCustomLen(parseInt(e.target.value) || 0)}
+                    min={1}
+                    max={500}
+                    style={{ flex: 1 }}
+                  />
+                  <button 
+                    className="menu-add-btn"
+                    onClick={() => {
+                      if (customLen > 0) {
+                        const existing = trailItems.find(t => t.value === customLen);
+                        if (!existing) {
+                          const newItem: TrailItem = {
+                            value: customLen,
+                            bookmarked: false,
+                            system: false,
+                            createdAt: new Date().toISOString()
+                          };
+                          setTrailItems([...trailItems, newItem]);
+                        }
+                        setTrailLength(customLen);
+                        setCustomTrailPopupOpen(false);
+                      }
+                    }}
+                  >
+                    ADD
+                  </button>
+                </div>
+
+                {trailItems.some(t => t.bookmarked) && (
+                  <>
+                    <div className="menu-section">Favorites</div>
+                    {trailItems.filter(t => t.bookmarked).sort((a,b)=>a.value-b.value).map(t => (
+                      <div key={t.value} className={`menu-item ${t.value === trailLength ? 'active' : ''}`} onClick={() => { setTrailLength(t.value); setCustomTrailPopupOpen(false); }}>
+                        <div className="menu-item-label">{t.value}</div>
+                        <div className="menu-item-actions" onClick={e => e.stopPropagation()}>
+                          {!t.system && (
+                            <button className="menu-icon-btn" onClick={() => setTrailItems(trailItems.filter(i => i.value !== t.value))} title="Delete">🗑</button>
+                          )}
+                          <button className="menu-icon-btn favorite active" onClick={() => setTrailItems(trailItems.map(i => i.value === t.value ? { ...i, bookmarked: false } : i))} title="Remove Favorite">★</button>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                )}
+
+                <div className="menu-section">Standard</div>
+                {trailItems.filter(t => !t.bookmarked && t.system).sort((a,b)=>a.value-b.value).map(t => (
+                  <div key={t.value} className={`menu-item ${t.value === trailLength ? 'active' : ''}`} onClick={() => { setTrailLength(t.value); setCustomTrailPopupOpen(false); }}>
+                    <div className="menu-item-label">{t.value}</div>
+                    <div className="menu-item-actions" onClick={e => e.stopPropagation()}>
+                      <button className="menu-icon-btn favorite" onClick={() => setTrailItems(trailItems.map(i => i.value === t.value ? { ...i, bookmarked: true } : i))} title="Add Favorite">☆</button>
+                    </div>
+                  </div>
+                ))}
+
+                {trailItems.some(t => !t.system && !t.bookmarked) && (
+                  <>
+                    <div className="menu-section">Custom</div>
+                    {trailItems.filter(t => !t.system && !t.bookmarked).sort((a,b)=>a.value-b.value).map(t => (
+                      <div key={t.value} className={`menu-item ${t.value === trailLength ? 'active' : ''}`} onClick={() => { setTrailLength(t.value); setCustomTrailPopupOpen(false); }}>
+                        <div className="menu-item-label">{t.value}</div>
+                        <div className="menu-item-actions" onClick={e => e.stopPropagation()}>
+                          <button className="menu-icon-btn" onClick={() => setTrailItems(trailItems.filter(i => i.value !== t.value))} title="Delete">🗑</button>
+                          <button className="menu-icon-btn favorite" onClick={() => setTrailItems(trailItems.map(i => i.value === t.value ? { ...i, bookmarked: true } : i))} title="Add Favorite">☆</button>
+                        </div>
+                      </div>
+                    ))}
+                  </>
+                )}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      )}
 
       <button 
         className={`command-bar__toggle ${showTrails ? 'command-bar__toggle--active' : ''}`}
@@ -295,13 +337,28 @@ const CommandBar: React.FC = memo(() => {
         {normalized ? '☑ NORM' : '☐ NORM'}
       </button>
 
-      <div className="command-bar__playback">
-        <button className="command-bar__playback-btn" onClick={() => {}}>⏮</button>
-        <button className="command-bar__playback-btn" onClick={() => setIsPlaying?.(!isPlaying)}>
-          {isPlaying ? '⏸' : '⏯'}
-        </button>
-        <button className="command-bar__playback-btn" onClick={() => {}}>⏭</button>
-      </div>
+      <button 
+        className={`command-bar__toggle ${intradayEnabled ? 'command-bar__toggle--active' : ''}`}
+        onClick={() => setIntradayEnabled(!intradayEnabled)}
+      >
+        {intradayEnabled ? '☑ INTRADAY' : '☐ INTRADAY'}
+      </button>
+
+      <button 
+        className={`command-bar__toggle ${liveStreamingEnabled ? 'command-bar__toggle--active' : ''}`}
+        onClick={() => setLiveStreamingEnabled(!liveStreamingEnabled)}
+        style={liveStreamingEnabled ? { color: '#00ff00', borderColor: '#00ff00' } : {}}
+      >
+        {liveStreamingEnabled ? '☑ LIVE' : '☐ LIVE'}
+      </button>
+
+      <button 
+        className={`command-bar__toggle ${replayModeEnabled ? 'command-bar__toggle--active' : ''}`}
+        onClick={() => setReplayModeEnabled(!replayModeEnabled)}
+      >
+        {replayModeEnabled ? '☑ REPLAY' : '☐ REPLAY'}
+      </button>
+
 
       <select 
         className="command-bar__export-btn" 
@@ -336,6 +393,8 @@ const CommandBar: React.FC = memo(() => {
 
       <SettingsModal open={settingsOpen} onClose={() => setSettingsOpen(false)} />
     </div>
+
+  </>
   );
 });
 

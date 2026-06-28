@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useRrgStore } from '../stores/useRrgStore';
 import { useChartSettingsStore } from '../stores/useChartSettingsStore';
 import { useCommandBarStore } from '../stores/useCommandBarStore';
+import { useLiveStore } from '../stores/useLiveStore';
+import { useReplayStore } from '../stores/useReplayStore';
 
 const getPollInterval = (tf: string) => {
   switch (tf) {
@@ -23,22 +25,42 @@ export function useAutoFetch() {
   const timeframe = useCommandBarStore(s => s.timeframe);
   const trailLength = useCommandBarStore(s => s.trailLength);
   const normalized = useCommandBarStore(s => s.normalized);
+  const replayModeEnabled = useCommandBarStore(s => s.replayModeEnabled);
+  const replayTimeframe = useReplayStore(s => s.replayTimeframe);
+  const replayTrailLength = useReplayStore(s => s.replayTrailLength);
+
+  const liveStreamingEnabled = useCommandBarStore(s => (s as any).liveStreamingEnabled);
+  const liveConnectionStatus = useLiveStore(s => s.liveConnectionStatus);
 
   const watchlistStr = useRrgStore(s => s.watchlist.filter(w => w.enabled).map(w => w.symbol).join(','));
+  const effectiveTimeframe = replayModeEnabled ? replayTimeframe : timeframe;
+  const effectiveTrailLength = replayModeEnabled ? replayTrailLength : trailLength;
 
   useEffect(() => {
     fetchSectorList();
   }, [fetchSectorList]);
 
   useEffect(() => {
+    // Replay session manages its own data lifecycle — skip all REST polling
+    if (replayModeEnabled) {
+      console.log('[AutoFetch] Paused — replay mode active');
+      return () => {};
+    }
+
+    // Pause REST polling when live streaming is active and connected (correction #18 — resume on FALLBACK)
+    if (liveStreamingEnabled && liveConnectionStatus === 'CONNECTED') {
+      console.log('[AutoFetch] Paused — live streaming active');
+      return () => {};
+    }
+
     const abortController = new AbortController();
     
     const timeoutId = setTimeout(() => {
-      console.log('[AutoFetch] Querying API with:', { timeframe, trailLength, normalized });
+      console.log('[AutoFetch] Querying API with:', { timeframe: effectiveTimeframe, trailLength: effectiveTrailLength, normalized });
       fetchData(abortController.signal);
     }, 250); // Debounce
     
-    const intervalMs = getPollInterval(timeframe);
+    const intervalMs = replayModeEnabled ? 0 : getPollInterval(effectiveTimeframe);
     let interval: ReturnType<typeof setInterval> | null = null;
     if (intervalMs > 0) {
       interval = setInterval(() => {
@@ -51,5 +73,15 @@ export function useAutoFetch() {
       abortController.abort();
       if (interval) clearInterval(interval);
     };
-  }, [fetchData, benchmark, timeframe, trailLength, normalized, watchlistStr]);
+  }, [
+    fetchData,
+    benchmark,
+    effectiveTimeframe,
+    effectiveTrailLength,
+    normalized,
+    watchlistStr,
+    liveStreamingEnabled,
+    liveConnectionStatus,
+    replayModeEnabled,
+  ]);
 }

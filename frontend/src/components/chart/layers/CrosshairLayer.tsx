@@ -1,43 +1,66 @@
-import React from 'react';
-import { useRrgStore } from '../../../stores/useRrgStore';
-import type { RrgScales } from '../../../core/scales';
+import React, { useEffect, useRef } from 'react';
+import { hoverEngine } from '../../../core/HoverEngine';
 import type { ChartDimensions } from '../../../types';
 import { bloomberg } from '../../../themes/bloomberg';
 
 interface CrosshairLayerProps {
   dims: ChartDimensions;
-  scales: RrgScales;
 }
 
-export const CrosshairLayer: React.FC<CrosshairLayerProps> = React.memo(({ dims, scales }) => {
-  const crosshairX = useRrgStore(s => s.crosshairX);
-  const crosshairY = useRrgStore(s => s.crosshairY);
+export const CrosshairLayer: React.FC<CrosshairLayerProps> = React.memo(({ dims }) => {
+  const lineXRef = useRef<SVGLineElement>(null);
+  const lineYRef = useRef<SVGLineElement>(null);
+  const labelXRef = useRef<SVGGElement>(null);
+  const labelYRef = useRef<SVGGElement>(null);
+  const textXRef = useRef<SVGTextElement>(null);
+  const textYRef = useRef<SVGTextElement>(null);
 
-  if (crosshairX === null || crosshairY === null) return null;
+  useEffect(() => {
+    hoverEngine.crosshairXRef = lineXRef.current;
+    hoverEngine.crosshairYRef = lineYRef.current;
+    hoverEngine.crosshairXLabelRef = labelXRef.current;
+    hoverEngine.crosshairYLabelRef = labelYRef.current;
+    hoverEngine.crosshairXTextRef = textXRef.current;
+    hoverEngine.crosshairYTextRef = textYRef.current;
 
-  const sx = scales.xScale(crosshairX);
-  const sy = scales.yScale(crosshairY);
-
-  const formatValue = (v: number) => v.toFixed(2);
+    return () => {
+      hoverEngine.crosshairXRef = null;
+      hoverEngine.crosshairYRef = null;
+      hoverEngine.crosshairXLabelRef = null;
+      hoverEngine.crosshairYLabelRef = null;
+      hoverEngine.crosshairXTextRef = null;
+      hoverEngine.crosshairYTextRef = null;
+    };
+  }, []);
 
   return (
     <g className="crosshair-layer" pointerEvents="none">
-      <line x1={0} x2={dims.innerWidth} y1={sy} y2={sy} stroke="#505050" strokeWidth={0.5} strokeDasharray="4,4" />
-      <line x1={sx} x2={sx} y1={0} y2={dims.innerHeight} stroke="#505050" strokeWidth={0.5} strokeDasharray="4,4" />
+      <line 
+        ref={lineYRef} 
+        x1={0} x2={dims.innerWidth} y1={-100} y2={-100} 
+        stroke="#505050" strokeWidth={0.5} strokeDasharray="4,4" 
+        style={{ visibility: 'hidden' }} 
+      />
+      <line 
+        ref={lineXRef} 
+        x1={-100} x2={-100} y1={0} y2={dims.innerHeight} 
+        stroke="#505050" strokeWidth={0.5} strokeDasharray="4,4" 
+        style={{ visibility: 'hidden' }} 
+      />
 
       {/* X-axis label */}
-      <g transform={`translate(${sx}, ${dims.innerHeight})`}>
+      <g ref={labelXRef} transform={`translate(-100, ${dims.innerHeight})`} style={{ visibility: 'hidden' }}>
         <rect x={-25} y={0} width={50} height={16} fill={bloomberg.bg.panel} stroke={bloomberg.border.primary} />
-        <text x={0} y={12} fontSize={10} fill={bloomberg.text.primary} textAnchor="middle">
-          {formatValue(crosshairX)}
+        <text ref={textXRef} x={0} y={12} fontSize={10} fill={bloomberg.text.primary} textAnchor="middle">
+          0.00
         </text>
       </g>
 
       {/* Y-axis label */}
-      <g transform={`translate(0, ${sy})`}>
+      <g ref={labelYRef} transform={`translate(0, -100)`} style={{ visibility: 'hidden' }}>
         <rect x={-35} y={-8} width={35} height={16} fill={bloomberg.bg.panel} stroke={bloomberg.border.primary} />
-        <text x={-4} y={3} fontSize={10} fill={bloomberg.text.primary} textAnchor="end">
-          {formatValue(crosshairY)}
+        <text ref={textYRef} x={-4} y={3} fontSize={10} fill={bloomberg.text.primary} textAnchor="end">
+          0.00
         </text>
       </g>
     </g>

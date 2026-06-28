@@ -41,16 +41,6 @@ public class TimeframeAggregationService {
         });
     }
 
-    public Optional<ProtoCandleFile> getAggregatedWindow(String sector, ParsedTimeframe tf, int requiredRawCandles, Supplier<Optional<ProtoCandleFile>> baseCandleSupplier) {
-        String key = "v2_session_anchor_partial_live|" + sector + "|" + tf.getCanonical() + "|" + requiredRawCandles + "|windowed";
-        return cache.get(key, k -> {
-            Optional<ProtoCandleFile> baseOpt = baseCandleSupplier.get();
-            if (baseOpt.isEmpty()) return Optional.empty();
-            ProtoCandleFile baseFile = baseOpt.get();
-            if (baseFile.getCandlesCount() == 0) return baseOpt;
-            return Optional.of(doAggregation(baseFile, tf));
-        });
-    }
 
     private ProtoCandleFile doAggregation(ProtoCandleFile baseFile, ParsedTimeframe tf) {
         List<ProtoCandle> baseCandles = baseFile.getCandlesList();

@@ -1,10 +1,12 @@
-import React, { useRef, useState, useEffect, useMemo, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useMemo } from 'react';
 import { useRrgStore } from '../../stores/useRrgStore';
 import { useCommandBarStore } from '../../stores/useCommandBarStore';
+import { useLiveStore } from '../../stores/useLiveStore';
 import { computeDomain, createScales } from '../../core/scales';
 import { useViewportStore } from '../../stores/useViewportStore';
 import { useShallow } from 'zustand/react/shallow';
 import { getQuadrantColor } from '../../themes/bloomberg';
+import { enrichAll } from '../../core/math';
 
 import { GridLayer } from './layers/GridLayer';
 import { QuadrantBackgrounds } from './layers/QuadrantBackgrounds';
@@ -16,6 +18,9 @@ import { PointLayer } from './layers/PointLayer';
 import { LabelLayer } from './layers/LabelLayer';
 import { CrosshairLayer } from './layers/CrosshairLayer';
 import { TooltipLayer } from './layers/TooltipLayer';
+import { HoverLayer } from './layers/HoverLayer';
+import { InteractionLayer } from './layers/InteractionLayer';
+import { hoverEngine } from '../../core/HoverEngine';
 import type { ChartDimensions, EnrichedRrgPoint } from '../../types';
 
 function useViewportHandler(svgRef: React.RefObject<SVGSVGElement | null>, dims: ChartDimensions) {
@@ -140,18 +145,31 @@ export const RrgScene: React.FC = React.memo(() => {
 
   const rawEnrichedData = useRrgStore(s => s.enrichedData);
   const hiddenSectors = useRrgStore(s => s.hiddenSectors);
+
+  // Live mode integration
+  const liveStreamingEnabled = useCommandBarStore(s => (s as any).liveStreamingEnabled);
+  const liveConnectionStatus = useLiveStore(s => s.liveConnectionStatus);
+  const timeframe = useCommandBarStore(s => s.timeframe);
+  const trailLength = useCommandBarStore(s => s.trailLength);
+  const getLiveRrgPoints = useLiveStore(s => s.getLiveRrgPoints);
+  const liveLastUpdate = useLiveStore(s => s.lastLiveUpdate);
+
+  const isLiveActive = liveStreamingEnabled && liveConnectionStatus === 'CONNECTED';
+
   const enrichedData = useMemo(() => {
+    if (isLiveActive) {
+      // Read from live store — canonical trail sliced to trailLength
+      const livePoints = getLiveRrgPoints(timeframe, trailLength);
+      return enrichAll(livePoints).filter((d: any) => !hiddenSectors.includes(d.symbol)) as unknown as EnrichedRrgPoint[];
+    }
     return (rawEnrichedData as unknown as EnrichedRrgPoint[]).filter(d => !hiddenSectors.includes(d.symbol));
-  }, [rawEnrichedData, hiddenSectors]);
+  }, [isLiveActive, rawEnrichedData, hiddenSectors, liveLastUpdate, timeframe, trailLength, getLiveRrgPoints]);
 
   const {
-    selectedSector, hoveredSector, setHoveredSector, setSelectedSector, setCrosshair, watchlist
+    selectedSector, setSelectedSector, watchlist
   } = useRrgStore(useShallow(s => ({
     selectedSector: s.selectedSector,
-    hoveredSector: s.hoveredSector,
-    setHoveredSector: s.setHoveredSector,
     setSelectedSector: s.setSelectedSector,
-    setCrosshair: s.setCrosshair,
     watchlist: s.watchlist
   })));
 
@@ -161,15 +179,19 @@ export const RrgScene: React.FC = React.memo(() => {
   const {
     targetFitZoom, targetFitOffsetX, targetFitOffsetY,
     targetInteractionZoom, targetInteractionOffsetX, targetInteractionOffsetY,
-    setDimensions: setViewportDimensions, startDrag, updateDrag, endDrag, screenToWorld
+    setDimensions: setViewportDimensions, isDragging
   } = useViewportStore(useShallow(s => ({
     targetFitZoom: s.targetFitZoom, targetFitOffsetX: s.targetFitOffsetX, targetFitOffsetY: s.targetFitOffsetY,
     targetInteractionZoom: s.targetInteractionZoom, targetInteractionOffsetX: s.targetInteractionOffsetX, targetInteractionOffsetY: s.targetInteractionOffsetY,
-    setDimensions: s.setDimensions, startDrag: s.startDrag, updateDrag: s.updateDrag, endDrag: s.endDrag, screenToWorld: s.screenToWorld
+    setDimensions: s.setDimensions, isDragging: s.isDragging
   })));
 
   const { renderState, stateRef } = useCameraInterpolation(targetFitZoom, targetFitOffsetX, targetFitOffsetY, targetInteractionZoom, targetInteractionOffsetX, targetInteractionOffsetY);
   const finalZoom = renderState.fitZoom * renderState.intZoom;
+
+  useEffect(() => {
+    hoverEngine.updateCamera(renderState, dims.innerWidth, dims.innerHeight);
+  }, [renderState, dims.innerWidth, dims.innerHeight]);
 
   useEffect(() => {
     setViewportDimensions(dims.innerWidth, dims.innerHeight, dims.innerWidth, dims.innerHeight);
@@ -207,60 +229,17 @@ export const RrgScene: React.FC = React.memo(() => {
         const bounds = computeDataBounds(enrichedData as any);
         setContentBounds(bounds);
       });
+      // Update HoverEngine data
+      hoverEngine.updateData(enrichedData as any, scales, stateRef.current);
     }
-  }, [enrichedData, setContentBounds]);
+  }, [enrichedData, setContentBounds, scales]);
 
   const marginTransform = `translate(${margin.left}, ${margin.top})`;
 
   const { onDoubleClick } = useViewportHandler(svgRef, dims);
 
-  const mouseDownPos = useRef<{ x: number, y: number } | null>(null);
-
-  const handleMouseDown = useCallback((e: React.MouseEvent<SVGSVGElement>) => {
-    mouseDownPos.current = { x: e.clientX, y: e.clientY };
-    startDrag(e.clientX, e.clientY);
-  }, [startDrag]);
-
-  const handleMouseUp = useCallback((e: React.MouseEvent<SVGSVGElement>) => {
-    endDrag();
-    if (mouseDownPos.current) {
-      const dx = Math.abs(e.clientX - mouseDownPos.current.x);
-      const dy = Math.abs(e.clientY - mouseDownPos.current.y);
-      if (dx < 5 && dy < 5) {
-        setSelectedSector(null);
-      }
-    }
-    mouseDownPos.current = null;
-  }, [endDrag, setSelectedSector]);
-
-  const handleMouseMove = useCallback((e: React.MouseEvent<SVGSVGElement>) => {
-    if (!containerRef.current) return;
-
-    updateDrag(e.clientX, e.clientY);
-
-    const rect = containerRef.current.getBoundingClientRect();
-    const sx = e.clientX - rect.left - margin.left;
-    const sy = e.clientY - rect.top - margin.top;
-
-    const { fitZoom, fitOffsetX, fitOffsetY, intZoom, intOffsetX, intOffsetY } = stateRef.current;
-    const fitX = (sx - fitOffsetX) / fitZoom;
-    const fitY = (sy - fitOffsetY) / fitZoom;
-
-    const worldX = (fitX - intOffsetX) / intZoom;
-    const worldY = (fitY - intOffsetY) / intZoom;
-
-    const rawX = scales.xScale.invert(worldX);
-    const rawY = scales.yScale.invert(worldY);
-    setCrosshair(rawX, rawY);
-  }, [scales, setCrosshair, margin.left, margin.top, updateDrag, screenToWorld, stateRef]);
-
-  const handleMouseLeave = useCallback(() => {
-    endDrag();
-    setCrosshair(null, null);
-  }, [setCrosshair, endDrag]);
-
   return (
-    <div id="rrg-scene-container" ref={containerRef} style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+    <div id="rrg-scene-container" ref={containerRef} style={{ width: '100%', flex: '1 1 auto', minHeight: 0, overflow: 'hidden', position: 'relative' }}>
       <svg
         id="rrg-scene-svg"
         ref={svgRef}
@@ -268,12 +247,8 @@ export const RrgScene: React.FC = React.memo(() => {
         height={dims.height}
         viewBox={`0 0 ${dims.width} ${dims.height}`}
         preserveAspectRatio="xMidYMid meet"
-        style={{ cursor: renderState.intZoom > 1 ? 'grab' : 'crosshair', background: 'transparent', display: 'block' }}
+        style={{ cursor: isDragging ? 'grabbing' : 'crosshair', background: 'transparent', display: 'block' }}
         onDoubleClick={onDoubleClick}
-        onMouseDown={handleMouseDown}
-        onMouseUp={handleMouseUp}
-        onMouseMove={handleMouseMove}
-        onMouseLeave={handleMouseLeave}
       >
         <defs>
           <clipPath id="plot-clip">
@@ -325,25 +300,31 @@ export const RrgScene: React.FC = React.memo(() => {
                           <QuadrantBackgrounds scales={scales} />
                           <GridLayer scales={scales} dims={dims} xDomain={xDomain} yDomain={yDomain} step={step} />
                           <CrosshairCenterLayer scales={scales} />
-                          <TrailLayer data={enrichedData} scales={scales} showTrail={showTrails} selectedSector={selectedSector} hoveredSector={hoveredSector} zoom={finalZoom} isStressed={renderState.isStressed} setHoveredSector={setHoveredSector} />
-                          <PointLayer data={enrichedData} scales={scales} selectedSector={selectedSector} hoveredSector={hoveredSector} zoom={finalZoom} setHoveredSector={setHoveredSector} />
+                          <TrailLayer data={enrichedData} scales={scales} showTrail={showTrails} selectedSector={selectedSector} zoom={finalZoom} isStressed={renderState.isStressed} />
+                          <PointLayer data={enrichedData} scales={scales} selectedSector={selectedSector} zoom={finalZoom} />
+                          <HoverLayer data={enrichedData} scales={scales} zoom={finalZoom} />
                         </g>
                       </g>
                     </g>
                   </g>
-                  <LabelLayer data={enrichedData} scales={scales} selectedSector={selectedSector} hoveredSector={hoveredSector} zoom={finalZoom} isStressed={renderState.isStressed} renderState={renderState} setHoveredSector={setHoveredSector} setSelectedSector={setSelectedSector} />
+                  <LabelLayer data={enrichedData} scales={scales} selectedSector={selectedSector} zoom={finalZoom} isStressed={renderState.isStressed} renderState={renderState} setSelectedSector={setSelectedSector} />
                 </g>
 
                 {/* INTERACTION OVERLAYS */}
                 <g className="overlay-layer">
-                  <CrosshairLayer dims={dims} scales={scales} />
-                  <TooltipLayer data={enrichedData} scales={scales} dims={dims} />
+                  <CrosshairLayer dims={dims} />
+                  <InteractionLayer width={dims.innerWidth} height={dims.innerHeight} scales={scales} />
                 </g>
               </>
             )}
           </g>
         </g>
       </svg>
+      {enabledCount > 0 && (
+        <div style={{ position: 'absolute', top: margin.top, left: margin.left, width: dims.innerWidth, height: dims.innerHeight, pointerEvents: 'none' }}>
+          <TooltipLayer />
+        </div>
+      )}
     </div>
   );
 });

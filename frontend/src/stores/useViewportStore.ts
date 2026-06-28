@@ -114,10 +114,7 @@ export const useViewportStore = create<ViewportState>((set, get) => ({
     let newInteractionOffsetX = fitX - worldX * newInteractionZoom;
     let newInteractionOffsetY = fitY - worldY * newInteractionZoom;
 
-    if (newInteractionZoom === 1) {
-      newInteractionOffsetX = 0;
-      newInteractionOffsetY = 0;
-    }
+    // Clamp logic removed to allow panning at 1x zoom
 
     set({ 
       targetInteractionZoom: newInteractionZoom,

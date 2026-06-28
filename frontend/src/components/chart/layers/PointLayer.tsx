@@ -7,12 +7,10 @@ interface PointLayerProps {
   data: EnrichedRrgPoint[];
   scales: RrgScales;
   selectedSector: string | null;
-  hoveredSector: string | null;
   zoom: number;
-  setHoveredSector: (symbol: string | null) => void;
 }
 
-export const PointLayer: React.FC<PointLayerProps> = React.memo(({ data, scales, selectedSector, hoveredSector, zoom, setHoveredSector }) => {
+export const PointLayer: React.FC<PointLayerProps> = React.memo(({ data, scales, selectedSector, zoom }) => {
   const adjZoom = Math.max(0.1, zoom);
 
   return (
@@ -21,11 +19,10 @@ export const PointLayer: React.FC<PointLayerProps> = React.memo(({ data, scales,
         const cx = scales.xScale(d.x);
         const cy = scales.yScale(d.y);
         const isSelected = selectedSector === d.symbol;
-        const isHovered = hoveredSector === d.symbol;
-        const isFaded = (selectedSector || hoveredSector) && !isSelected && !isHovered;
+        const isFaded = selectedSector && !isSelected;
         
         // Semantic Zoom: Scale down world geometry so screen size remains constant
-        const baseSize = isSelected || isHovered ? 8 : 6;
+        const baseSize = isSelected ? 8 : 6;
         const size = baseSize / adjZoom;
         const half = size / 2;
         const color = getQuadrantColor(d.quadrant).text;
@@ -40,7 +37,7 @@ export const PointLayer: React.FC<PointLayerProps> = React.memo(({ data, scales,
 
         let opacity = 1.0;
         if (isFaded) opacity = 0.15;
-        else if (isSelected || isHovered) opacity = 1.0;
+        else if (isSelected) opacity = 1.0;
         else opacity = staleOpacity;
 
         const strokeWidth = 1 / adjZoom;
@@ -50,9 +47,6 @@ export const PointLayer: React.FC<PointLayerProps> = React.memo(({ data, scales,
             key={`point-${d.symbol}`} 
             transform={`translate(${cx}, ${cy})`}
             opacity={opacity}
-            onMouseEnter={() => setHoveredSector(d.symbol)}
-            onMouseLeave={() => setHoveredSector(null)}
-            style={{ cursor: 'pointer' }}
           >
             {isSelected && (
               <rect
@@ -71,7 +65,7 @@ export const PointLayer: React.FC<PointLayerProps> = React.memo(({ data, scales,
               y={-half}
               width={size}
               height={size}
-              fill={isHovered ? '#FFFFFF' : color}
+              fill={color}
               stroke="#000000"
               strokeWidth={strokeWidth}
             />

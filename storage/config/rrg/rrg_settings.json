@@ -1,9 +1,9 @@
 {
-  "version" : 1,
-  "updatedAt" : 1779645704487,
+  "version" : 0,
+  "updatedAt" : 0,
   "optimization" : {
-    "minimalWindowResampling" : true,
-    "watchlistOnlyResampling" : true,
+    "minimalWindowResampling" : false,
+    "watchlistOnlyResampling" : false,
     "backgroundSnapshotRefresh" : true,
     "snapshotCacheEnabled" : true,
     "snapshotCacheTtlEnabled" : true
@@ -27,5 +27,55 @@
     "hoverHighlight" : true,
     "selectionHighlight" : true,
     "tooltipEnabled" : true
+  },
+  "windowing" : {
+    "minimumSafeWindow" : 1200,
+    "warmupMultiplier" : 1.5,
+    "stabilizationMultiplier" : 1.2
+  },
+  "trailReplay" : {
+    "enabled" : true,
+    "timeframeDateRanges" : {
+      "MINUTE" : {
+        "rangeType" : "WEEK",
+        "rangeValue" : 1,
+        "defaultTrailLength" : 30,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : true
+      },
+      "HOUR" : {
+        "rangeType" : "WEEK",
+        "rangeValue" : 3,
+        "defaultTrailLength" : 20,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : true
+      },
+      "DAY" : {
+        "rangeType" : "MONTH",
+        "rangeValue" : 3,
+        "defaultTrailLength" : 15,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : true
+      },
+      "WEEK" : {
+        "rangeType" : "MONTH",
+        "rangeValue" : 9,
+        "defaultTrailLength" : 12,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : false
+      },
+      "MONTH" : {
+        "rangeType" : "YEAR",
+        "rangeValue" : 10,
+        "defaultTrailLength" : 10,
+        "maxTrailLength" : 120,
+        "autoApplyDefaultTrail" : false
+      }
+    },
+    "replayDefaults" : {
+      "restoreLastReplayDate" : true,
+      "rememberLastTrailLength" : true,
+      "rememberPlaybackSpeed" : true
+    }
   }
 }

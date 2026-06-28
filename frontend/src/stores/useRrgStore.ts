@@ -4,6 +4,7 @@ import { enrichAll, computeQuadrantDistribution } from '../core/math';
 import { useChartSettingsStore } from './useChartSettingsStore';
 import { useCommandBarStore } from './useCommandBarStore';
 import { fetchSnapshotWithLatency, fetchSectors, fetchWatchlistConfig, updateWatchlistConfig } from '../services/api';
+import { useReplayStore } from './useReplayStore';
 
 interface RrgState {
   // Data
@@ -30,21 +31,16 @@ interface RrgState {
   // Historical playback (future-proofed)
   historicalFrames: HistoricalFrame[];
   currentFrameIndex: number;
-  playbackSpeed: number;
-  isPlaying: boolean;
   
-  // Crosshair
-  crosshairX: number | null;
-  crosshairY: number | null;
-  
+  // Replay date state
+  replayDefaultApplied: boolean;       // guard: auto-apply trail only once per replay-enable
+
   // Actions
   // Settings setters moved to useChartSettingsStore
   setSelectedSector: (s: string | null) => void;
   setHoveredSector: (s: string | null) => void;
-  setCrosshair: (x: number | null, y: number | null) => void;
-  setPlaybackSpeed: (s: number) => void;
-  setIsPlaying: (v: boolean) => void;
   setCurrentFrameIndex: (i: number) => void;
+  setReplayDefaultApplied: (v: boolean) => void;
   toggleSector: (symbol: string) => void;
   toggleHiddenSector: (symbol: string) => void;
   hideSectors: (symbols: string[]) => void;
@@ -56,6 +52,13 @@ interface RrgState {
   lastQueryKey: string | null;
   fetchData: (signal?: AbortSignal) => Promise<void>;
   fetchSectorList: () => Promise<void>;
+  
+  // Replay engine: inject pre-built snapshot data directly (bypasses fetchData)
+  setReplaySnapshot: (snapshot: {
+    rawData: RrgPoint[];
+    enrichedData: EnrichedRrgPoint[];
+    quadrantDistribution: QuadrantDistribution;
+  }) => void;
 }
 
 let saveTimeout: any = null;
@@ -75,18 +78,13 @@ export const useRrgStore = create<RrgState>((set, get) => ({
   loading: false,
   historicalFrames: [],
   currentFrameIndex: 0,
-  playbackSpeed: 1,
-  isPlaying: false,
-  crosshairX: null,
-  crosshairY: null,
   lastQueryKey: null,
+  replayDefaultApplied: false,
   
   setSelectedSector: (s) => set({ selectedSector: s }),
   setHoveredSector: (s) => set({ hoveredSector: s }),
-  setCrosshair: (x, y) => set({ crosshairX: x, crosshairY: y }),
-  setPlaybackSpeed: (s) => set({ playbackSpeed: s }),
-  setIsPlaying: (v) => set({ isPlaying: v }),
   setCurrentFrameIndex: (i) => set({ currentFrameIndex: i }),
+  setReplayDefaultApplied: (v) => set({ replayDefaultApplied: v }),
   
   toggleSector: (symbol) => set(state => {
     const next = state.watchlist.map(w => w.symbol === symbol ? { ...w, enabled: !w.enabled } : w);
@@ -152,7 +150,13 @@ export const useRrgStore = create<RrgState>((set, get) => ({
 
   fetchData: async (signal?: AbortSignal) => {
     let { benchmark, minimalWindowResampling, watchlistOnlyResampling } = useChartSettingsStore.getState();
-    let { timeframe, trailLength, normalized } = useCommandBarStore.getState();
+    const commandBarState = useCommandBarStore.getState();
+    const replayState = useReplayStore.getState();
+    const replayModeEnabled = commandBarState.replayModeEnabled;
+    const timeframe = replayModeEnabled ? replayState.replayTimeframe : commandBarState.timeframe;
+    const trailLength = replayModeEnabled ? replayState.replayTrailLength : commandBarState.trailLength;
+    const normalized = commandBarState.normalized;
+    const selectedReplayDate = replayModeEnabled ? replayState.getSelectedReplayDate() : null;
 
     if (benchmark === 'NSE_INDEX__Nifty_50') benchmark = 'NSE_INDEX_Nifty 50';
     const { watchlist, lastQueryKey, selectedSector, hoveredSector } = get();
@@ -167,7 +171,7 @@ export const useRrgStore = create<RrgState>((set, get) => ({
       enabledSectors.push(benchmark);
     }
 
-    const queryKey = JSON.stringify({ benchmark, timeframe, trailLength, normalized, minimalWindowResampling, watchlistOnlyResampling, enabledSectors, watchlistSectors, selectedSector, hoveredSector });
+    const queryKey = JSON.stringify({ benchmark, timeframe, trailLength, normalized, minimalWindowResampling, watchlistOnlyResampling, enabledSectors, watchlistSectors, selectedSector, hoveredSector, selectedReplayDate });
     if (queryKey === lastQueryKey) return; // Deduplication
     
     set({ lastQueryKey: queryKey });
@@ -180,7 +184,7 @@ export const useRrgStore = create<RrgState>((set, get) => ({
     
     set({ loading: true });
     try {
-      const { data, latency } = await fetchSnapshotWithLatency(benchmark, timeframe, trailLength, normalized, enabledSectors, minimalWindowResampling, watchlistOnlyResampling, watchlistSectors, selectedSector, hoveredSector, signal);
+      const { data, latency } = await fetchSnapshotWithLatency(benchmark, timeframe, trailLength, normalized, enabledSectors, minimalWindowResampling, watchlistOnlyResampling, watchlistSectors, selectedSector, hoveredSector, signal, selectedReplayDate ?? undefined);
       const enriched = enrichAll(data);
       const distribution = computeQuadrantDistribution(data);
       set({
@@ -199,6 +203,18 @@ export const useRrgStore = create<RrgState>((set, get) => ({
     }
   },
   
+  // Replay engine: inject pre-built snapshot data directly, bypassing fetchData().
+  // The live fetchData() path remains completely untouched.
+  setReplaySnapshot: (snapshot) => {
+    set({
+      rawData: snapshot.rawData,
+      enrichedData: snapshot.enrichedData,
+      quadrantDistribution: snapshot.quadrantDistribution,
+      lastUpdate: Date.now(),
+      loading: false,
+    });
+  },
+
   fetchSectorList: async () => {
     try {
       const fetchedSectors = await fetchSectors();

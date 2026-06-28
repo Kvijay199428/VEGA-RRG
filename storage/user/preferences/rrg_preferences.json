@@ -1,0 +1,120 @@
+{
+  "version" : 1,
+  "updatedAt" : 0,
+  "activeTimeframe" : "5min",
+  "activeTrailLength" : 5,
+  "timeframes" : [ {
+    "id" : "1min",
+    "label" : "1 MIN",
+    "minutes" : 1,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "5min",
+    "label" : "5 MIN",
+    "minutes" : 5,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "15min",
+    "label" : "15 MIN",
+    "minutes" : 15,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "45min",
+    "label" : "45 MIN",
+    "minutes" : 45,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "1h",
+    "label" : "1 HOUR",
+    "minutes" : 60,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "1d",
+    "label" : "1 DAY",
+    "minutes" : 1440,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "1w",
+    "label" : "1 WEEK",
+    "minutes" : 10080,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  }, {
+    "id" : "1mo",
+    "label" : "1 MONTH",
+    "minutes" : 43200,
+    "bookmarked" : true,
+    "supported" : true,
+    "system" : true,
+    "createdAt" : null
+  } ],
+  "trails" : [ {
+    "value" : 5,
+    "bookmarked" : true,
+    "system" : true,
+    "recommendedReplayRange" : null,
+    "createdAt" : null
+  }, {
+    "value" : 10,
+    "bookmarked" : true,
+    "system" : true,
+    "recommendedReplayRange" : null,
+    "createdAt" : null
+  }, {
+    "value" : 15,
+    "bookmarked" : true,
+    "system" : true,
+    "recommendedReplayRange" : null,
+    "createdAt" : null
+  }, {
+    "value" : 20,
+    "bookmarked" : true,
+    "system" : true,
+    "recommendedReplayRange" : null,
+    "createdAt" : null
+  }, {
+    "value" : 30,
+    "bookmarked" : true,
+    "system" : true,
+    "recommendedReplayRange" : null,
+    "createdAt" : null
+  } ],
+  "toggles" : {
+    "normalized" : true,
+    "trailsEnabled" : true,
+    "intradayEnabled" : false,
+    "liveStreamingEnabled" : false,
+    "replayModeEnabled" : true
+  },
+  "replay" : {
+    "selectedRangePreset" : "1W",
+    "selectedTimeframe" : "5min",
+    "selectedTrailLength" : 5,
+    "playbackSpeed" : 10.0,
+    "loopPlayback" : false,
+    "lastCursorTimestamp" : 1779250440000,
+    "lastStartTimestamp" : 1779249240000,
+    "lastEndTimestamp" : 1779250440000,
+    "lastBenchmark" : null
+  }
+}

@@ -27,7 +27,13 @@
   border-left: 1px solid var(--border-primary);
   overflow: hidden;
 }
-.app__chart { grid-area: chart; overflow: hidden; position: relative; }
+.app__chart { 
+  grid-area: chart; 
+  overflow: hidden; 
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+}
 .app__status { grid-area: status; }
 
 @media (max-width: 900px) {

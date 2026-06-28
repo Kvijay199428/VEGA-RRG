@@ -16,6 +16,7 @@ import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
@@ -39,6 +40,9 @@ public class RrgController {
 
     @Autowired
     private InflightComputationRegistry inflightRegistry;
+
+    @Autowired
+    private com.vega.rrg.service.CandleService candleService;
 
     @GetMapping("/snapshot")
     public CompletableFuture<List<RrgPoint>> getSnapshot(
@@ -123,7 +127,8 @@ public class RrgController {
             }
 
             if (results.isEmpty()) {
-                throw new DataNotFoundException("RRG calculation yielded empty results", benchmark, normalizedTimeframe);
+                log.info("RRG calculation yielded empty results for benchmark: {}, timeframe: {}", benchmark, normalizedTimeframe);
+                return Collections.emptyList();
             }
 
             return results;
@@ -142,6 +147,146 @@ public class RrgController {
         File storageDir = new File("../storage/candles/sector");
         String[] sectorDirs = storageDir.list((dir, name) -> new File(dir, name).isDirectory());
         return sectorDirs != null ? Arrays.asList(sectorDirs) : Arrays.asList();
+    }
+
+    /**
+     * Stateless replay dataset endpoint.
+     * Returns series-oriented RS-Ratio and RS-Momentum arrays for all requested
+     * sectors in a single response. The client builds per-frame snapshots and trails
+     * by slicing these arrays — no per-frame objects, no sessions, no server-side state.
+     */
+    @GetMapping("/replay-dataset")
+    public CompletableFuture<ResponseEntity<?>> getReplayDataset(
+            @RequestParam(defaultValue = "NSE_INDEX_Nifty 50") String benchmark,
+            @RequestParam(defaultValue = "1d") String timeframe,
+            @RequestParam(defaultValue = "true") boolean normalized,
+            @RequestParam List<String> sectors,
+            @RequestParam long fromMs,
+            @RequestParam long toMs) {
+
+        return CompletableFuture.supplyAsync(() -> {
+            ParsedTimeframe parsedTf;
+            try {
+                parsedTf = timeframeParser.parse(timeframe);
+            } catch (Exception e) {
+                log.warn("Failed to parse timeframe for replay-dataset: {}. Defaulting to 1d.", timeframe);
+                parsedTf = timeframeParser.parse("1d");
+            }
+
+            List<String> targetSectors = sectors.stream()
+                    .filter(s -> !s.equalsIgnoreCase("sector") && !s.trim().isEmpty())
+                    .collect(Collectors.toList());
+
+            if (targetSectors.isEmpty()) {
+                return ResponseEntity.badRequest().body(Map.of("error", "No sectors specified"));
+            }
+
+            com.vega.rrg.model.ReplayDatasetResult result = rrgService.buildReplayDataset(
+                    targetSectors, benchmark, parsedTf, normalized, fromMs, toMs);
+
+            // Build response map matching the documented series-oriented JSON shape
+            Map<String, Object> response = new LinkedHashMap<>();
+            response.put("metadata", Map.of(
+                    "generation", result.metadata().generation(),
+                    "hash", result.metadata().hash(),
+                    "createdAt", result.metadata().createdAt(),
+                    "instrumentRevision", result.metadata().instrumentRevision()
+            ));
+            response.put("capabilities", Map.of(
+                    "supportsReplay", result.capabilities().supportsReplay(),
+                    "supportsNormalization", result.capabilities().supportsNormalization(),
+                    "supportsIntraday", result.capabilities().supportsIntraday(),
+                    "maxTrailLength", result.capabilities().maxTrailLength(),
+                    "minTimestamp", result.capabilities().minTimestamp(),
+                    "maxTimestamp", result.capabilities().maxTimestamp()
+            ));
+            response.put("benchmark", result.benchmark());
+            response.put("timeframe", result.timeframe());
+            response.put("normalized", result.normalized());
+            response.put("frameCount", result.frameCount());
+            response.put("timestamps", result.timestamps());
+
+            // referenceSeries as ordered array
+            List<Map<String, Object>> refList = new ArrayList<>();
+            for (var ref : result.referenceSeries()) {
+                refList.add(Map.of("symbol", ref.symbol(), "closes", ref.closes()));
+            }
+            response.put("referenceSeries", refList);
+
+            // sectorSeries as ordered array (not a map — per design decision #10)
+            List<Map<String, Object>> seriesList = new ArrayList<>();
+            for (var s : result.sectorSeries()) {
+                seriesList.add(Map.of(
+                        "symbol", s.symbol(),
+                        "rsRatio", s.rsRatio(),
+                        "rsMomentum", s.rsMomentum()
+                ));
+            }
+            response.put("sectorSeries", seriesList);
+
+            return ResponseEntity.ok(response);
+        });
+    }
+
+    @GetMapping("/benchmark/history")
+    public ResponseEntity<?> getBenchmarkHistory(
+            @RequestParam(defaultValue = "NSE_INDEX_Nifty 50") String benchmark,
+            @RequestParam(defaultValue = "1d") String timeframe,
+            @RequestParam(required = false) String from,
+            @RequestParam(required = false) String to,
+            @RequestParam(required = false) String range) {
+
+        ParsedTimeframe parsedTf;
+        try {
+            parsedTf = timeframeParser.parse(timeframe);
+        } catch (Exception e) {
+            parsedTf = timeframeParser.parse("1d");
+        }
+
+        // We load all candles. If we want we could pass window length, 
+        // but for benchmark history we want a big chunk. CandleService loads all base candles.
+        Optional<com.vega.rrg.proto.ProtoCandleFile> candlesOpt = candleService.loadCandles(benchmark, parsedTf);
+
+        if (candlesOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        List<com.vega.rrg.proto.ProtoCandle> candles = candlesOpt.get().getCandlesList();
+        if (candles.isEmpty()) {
+            Map<String, Object> emptyResponse = new HashMap<>();
+            emptyResponse.put("benchmark", benchmark);
+            emptyResponse.put("timeframe", timeframe);
+            emptyResponse.put("range", range != null ? range : "MAX");
+            emptyResponse.put("points", List.of());
+            return ResponseEntity.ok(emptyResponse);
+        }
+
+        long latestEpoch = candles.get(candles.size() - 1).getEpochMillis();
+        long toEpoch = to != null ? parseReplayTime(to) : latestEpoch;
+        long fromEpoch = from != null ? parseReplayTime(from) : resolveRangeStart(range, toEpoch);
+
+        List<Map<String, Object>> points = candles.stream()
+                .filter(c -> {
+                    long t = c.getEpochMillis();
+                    return t >= fromEpoch && t <= toEpoch;
+                })
+                .map(c -> {
+                    Map<String, Object> p = new HashMap<>();
+                    p.put("epochMillis", c.getEpochMillis());
+                    p.put("close", c.getClose());
+                    return p;
+                })
+                .collect(Collectors.toList());
+
+        Map<String, Object> response = new HashMap<>();
+        response.put("benchmark", benchmark);
+        response.put("timeframe", timeframe);
+        response.put("range", range != null ? range : "CUSTOM");
+        response.put("fromEpochMillis", fromEpoch);
+        response.put("toEpochMillis", toEpoch);
+        response.put("points", points);
+
+        return ResponseEntity.ok(response);
     }
 
     @ExceptionHandler(DataNotFoundException.class)
@@ -170,6 +315,9 @@ public class RrgController {
 
     private long parseReplayTime(String value) {
         try {
+            if (value.endsWith("Z") || value.contains("+") || (value.contains("-") && value.lastIndexOf("-") > 7)) {
+                return Instant.parse(value).toEpochMilli();
+            }
             return LocalDateTime.parse(value)
                 .atZone(ZoneId.of("Asia/Kolkata"))
                 .toInstant()
@@ -179,6 +327,31 @@ public class RrgController {
                 .atStartOfDay(ZoneId.of("Asia/Kolkata"))
                 .toInstant()
                 .toEpochMilli();
+        }
+    }
+
+    private long resolveRangeStart(String range, long anchorEpochMillis) {
+        if (range == null || range.isBlank() || range.equalsIgnoreCase("MAX") || range.equalsIgnoreCase("CUSTOM")) {
+            return 0L;
+        }
+
+        ZoneId zone = ZoneId.of("Asia/Kolkata");
+        ZonedDateTime anchor = Instant.ofEpochMilli(anchorEpochMillis).atZone(zone);
+        String normalizedRange = range.toUpperCase(Locale.ROOT);
+
+        try {
+            int value = Integer.parseInt(normalizedRange.substring(0, normalizedRange.length() - 1));
+            String unit = normalizedRange.substring(normalizedRange.length() - 1);
+            ZonedDateTime start = switch (unit) {
+                case "W" -> anchor.minusWeeks(value);
+                case "M" -> anchor.minusMonths(value);
+                case "Y" -> anchor.minusYears(value);
+                case "D" -> anchor.minusDays(value);
+                default -> anchor.minusMonths(3);
+            };
+            return start.toInstant().toEpochMilli();
+        } catch (Exception ignored) {
+            return anchor.minusMonths(3).toInstant().toEpochMilli();
         }
     }
 }

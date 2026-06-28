@@ -1,63 +1,117 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useRrgStore } from '../../../stores/useRrgStore';
-import { cleanSectorName } from '../../../core/math';
-import type { RrgScales } from '../../../core/scales';
-import type { ChartDimensions, EnrichedRrgPoint } from '../../../types';
+import { hoverEngine } from '../../../core/HoverEngine';
+import { tooltipController } from '../../../core/TooltipController';
 
-interface TooltipLayerProps {
-  data: EnrichedRrgPoint[];
-  scales: RrgScales;
-  dims: ChartDimensions;
-}
+interface TooltipLayerProps {}
 
-export const TooltipLayer: React.FC<TooltipLayerProps> = React.memo(({ data, scales, dims }) => {
+export const TooltipLayer: React.FC<TooltipLayerProps> = React.memo(() => {
+  const tooltipRef = useRef<HTMLDivElement>(null);
   const hoveredSector = useRrgStore(s => s.hoveredSector);
+  
+  // Register handle with controller
+  useEffect(() => {
+    tooltipController.registerHandle({
+      setTransform: (x, y) => {
+        if (tooltipRef.current) {
+          tooltipRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+        }
+      },
+      setOpacity: (opacity) => {
+        if (tooltipRef.current) {
+          tooltipRef.current.style.opacity = opacity.toString();
+        }
+      },
+      setVisibility: (visible) => {
+        if (tooltipRef.current) {
+          tooltipRef.current.style.visibility = visible ? 'visible' : 'hidden';
+        }
+      }
+    });
 
-  if (!hoveredSector) return null;
+    return () => {
+      tooltipController.unregisterHandle();
+    };
+  }, []);
 
-  const point = data.find(d => d.symbol === hoveredSector);
-  if (!point) return null;
+  // Set up ResizeObserver to feed dimensions back to controller
+  useEffect(() => {
+    if (!tooltipRef.current) return;
+    const observer = new ResizeObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.borderBoxSize && entry.borderBoxSize.length > 0) {
+          tooltipController.setSize(entry.borderBoxSize[0].inlineSize, entry.borderBoxSize[0].blockSize);
+        } else {
+          tooltipController.setSize(entry.contentRect.width, entry.contentRect.height);
+        }
+      }
+    });
+    
+    observer.observe(tooltipRef.current);
+    
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
-  const cx = scales.xScale(point.x);
-  const cy = scales.yScale(point.y);
-
-  const tooltipWidth = 180;
-  const tooltipHeight = 130;
-
-  let x = cx + 15;
-  let y = cy + 15;
-  if (x + tooltipWidth > dims.width) x = cx - tooltipWidth - 15;
-  if (y + tooltipHeight > dims.height) y = cy - tooltipHeight - 15;
+  const tooltipData = hoveredSector ? hoverEngine.getTooltipData(hoveredSector) : null;
 
   return (
-    <g className="tooltip-layer" pointerEvents="none">
-      <foreignObject x={x} y={y} width={tooltipWidth} height={tooltipHeight}>
-        <div style={{
+    <div 
+      className="tooltip-layer-container" 
+      style={{ 
+        position: 'absolute', 
+        top: 0, 
+        left: 0, 
+        width: '100%', 
+        height: '100%', 
+        pointerEvents: 'none', 
+        overflow: 'hidden'
+      }}
+    >
+      <div 
+        ref={tooltipRef}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: 180, // We can keep a fixed width, or let it shrink to fit (auto)
           background: '#111111',
           border: '1px solid #333333',
           padding: '8px',
           borderRadius: '4px',
           color: '#E0E0E0',
-          fontFamily: 'monospace',
+          fontFamily: '"IBM Plex Mono", "JetBrains Mono", monospace',
           fontSize: '11px',
-          lineHeight: '1.4'
-        }}>
-          <div style={{ fontWeight: 'bold', marginBottom: '4px', borderBottom: '1px solid #333', paddingBottom: '4px' }}>
-            {cleanSectorName(point.symbol)}
-          </div>
-          <div>RS-Ratio: {point.x.toFixed(2)}</div>
-          <div>RS-Momentum: {point.y.toFixed(2)}</div>
-          <div>Quadrant: {point.quadrant}</div>
-          <div>Velocity: {point.velocity?.toFixed(2) || 'N/A'}</div>
-          <div>Heading: {point.heading || 'N/A'}</div>
-          <div>Distance: {point.distance?.toFixed(2) || 'N/A'}</div>
-          {point.stale && point.computedAt && (
-            <div style={{ color: '#FFB74D', marginTop: '4px', borderTop: '1px solid #333', paddingTop: '4px', fontStyle: 'italic' }}>
-              Last Updated: {Math.round((Date.now() - point.computedAt) / 1000)}s ago (Stale)
+          lineHeight: '15px',
+          WebkitFontSmoothing: 'antialiased',
+          MozOsxFontSmoothing: 'grayscale',
+          textRendering: 'optimizeLegibility',
+          visibility: 'hidden',
+          opacity: 0,
+          willChange: 'transform, opacity',
+          zIndex: 1000
+        }}
+      >
+        {tooltipData && (
+          <>
+            <div style={{ fontWeight: 'bold', marginBottom: '4px', borderBottom: '1px solid #333', paddingBottom: '4px' }}>
+              {tooltipData.name}
             </div>
-          )}
-        </div>
-      </foreignObject>
-    </g>
+            <div>RS-Ratio: {tooltipData.ratio}</div>
+            <div>RS-Momentum: {tooltipData.momentum}</div>
+            <div>Quadrant: {tooltipData.quadrant}</div>
+            <div>Velocity: {tooltipData.velocity}</div>
+            <div>Heading: {tooltipData.heading}</div>
+            <div>Distance: {tooltipData.distance}</div>
+            {tooltipData.stale && tooltipData.computedAt && (
+              <div style={{ color: '#FFB74D', marginTop: '4px', borderTop: '1px solid #333', paddingTop: '4px', fontStyle: 'italic' }}>
+                Last Updated: {Math.round((Date.now() - tooltipData.computedAt) / 1000)}s ago (Stale)
+              </div>
+            )}
+          </>
+        )}
+      </div>
+    </div>
   );
 });

@@ -6,23 +6,23 @@ import { smartLabelPlacement } from '../../../core/geometry';
 import { cleanSectorName } from '../../../core/math';
 import { useViewportStore } from '../../../stores/useViewportStore';
 import { useChartSettingsStore } from '../../../stores/useChartSettingsStore';
+import { useRrgStore } from '../../../stores/useRrgStore';
 
 interface LabelLayerProps {
   data: EnrichedRrgPoint[];
   scales: RrgScales;
   selectedSector: string | null;
-  hoveredSector: string | null;
   zoom: number;
   isStressed: boolean;
   renderState: any;
-  setHoveredSector: (symbol: string | null) => void;
   setSelectedSector: (symbol: string | null) => void;
 }
 
-export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales, selectedSector, hoveredSector, zoom, isStressed, renderState, setHoveredSector, setSelectedSector }) => {
+export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales, selectedSector, zoom, isStressed, renderState, setSelectedSector }) => {
   const viewportWidth = useViewportStore(s => s.viewportWidth);
   const viewportHeight = useViewportStore(s => s.viewportHeight);
   const showLabels = useChartSettingsStore(s => s.showLabels);
+  const hoveredSector = useRrgStore(s => s.hoveredSector);
 
   if (!showLabels) return null;
 
@@ -32,7 +32,6 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
       const name = cleanSectorName(d.symbol);
 
       const isSelected = selectedSector === d.symbol;
-      const isHovered = hoveredSector === d.symbol;
 
       // Mathematical Camera Projection
       const worldX = scales.xScale(d.x);
@@ -46,10 +45,9 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
 
       // Priority Scoring
       const selectedWeight = isSelected ? 1000 : 0;
-      const hoveredWeight = isHovered ? 500 : 0;
       const momentumWeight = d.momentumRoc * 10;
       const velocityWeight = d.velocity * 5;
-      const priority = selectedWeight + hoveredWeight + momentumWeight + velocityWeight;
+      const priority = selectedWeight + momentumWeight + velocityWeight;
 
       let trailSegments: {x1: number, y1: number, x2: number, y2: number}[] = [];
       if (d.trail && d.trail.length > 0) {
@@ -86,7 +84,6 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
         text: name,
         priority,
         isSelected,
-        isHovered,
         trailSegments,
         stale: d.stale,
         computedAt: d.computedAt
@@ -94,7 +91,7 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
     });
 
     rawLabels = rawLabels.filter(lbl => {
-      if (lbl.isSelected || lbl.isHovered) return true;
+      if (lbl.isSelected) return true;
       if (isStressed) return false;
 
       const pad = 20;
@@ -105,14 +102,22 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
     });
 
     // Phase 2: Dynamic Bounding Box Placement & Collision Avoidance
-    return smartLabelPlacement(rawLabels);
+    const placed = smartLabelPlacement(rawLabels);
+    
+    // Sort so the hovered label is drawn last (on top)
+    return placed.sort((a, b) => {
+      if (a.id === hoveredSector) return 1;
+      if (b.id === hoveredSector) return -1;
+      return 0;
+    });
 
-  }, [data, scales, zoom, isStressed, renderState, viewportWidth, viewportHeight, hoveredSector, selectedSector]);
+  }, [data, scales, zoom, isStressed, renderState, viewportWidth, viewportHeight, selectedSector, hoveredSector]);
 
   return (
     <g className="label-layer">
       {labels.map(lbl => {
-        const isFaded = (selectedSector || hoveredSector) && !lbl.isSelected && !lbl.isHovered;
+        const isFaded = selectedSector && !lbl.isSelected;
+        const isHovered = lbl.id === hoveredSector;
         
         const ageMs = lbl.computedAt ? Date.now() - lbl.computedAt : 0;
         let staleOpacity = 0.6;
@@ -123,11 +128,12 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
         }
 
         let opacity = 0.6;
-        if (isFaded) opacity = 0.1;
-        else if (lbl.isSelected || lbl.isHovered) opacity = 1.0;
+        if (isFaded && !isHovered) opacity = 0.1;
+        else if (lbl.isSelected || isHovered) opacity = 1.0;
         else opacity = staleOpacity;
 
-        const fontWeight = lbl.isSelected || lbl.isHovered ? 600 : 400;
+        const fontWeight = (lbl.isSelected || isHovered) ? 700 : 400;
+        const fill = isHovered ? '#ffffff' : bloomberg.text.primary;
 
         return (
           <g key={`label-${lbl.id}`} transform={`translate(${lbl.x}, ${lbl.y})`}>
@@ -137,11 +143,9 @@ export const LabelLayer: React.FC<LabelLayerProps> = React.memo(({ data, scales,
               dominantBaseline="hanging"
               fontSize={10}
               fontWeight={fontWeight}
-              fill={bloomberg.text.primary}
+              fill={fill}
               opacity={opacity}
               style={{ pointerEvents: 'auto', cursor: 'pointer', textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}
-              onMouseEnter={() => setHoveredSector(lbl.id)}
-              onMouseLeave={() => setHoveredSector(null)}
               onMouseUp={(e) => {
                 e.stopPropagation();
                 setSelectedSector(lbl.isSelected ? null : lbl.id);
